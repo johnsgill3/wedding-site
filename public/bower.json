@@ -1,5 +1,5 @@
 {
-    "name" : "stephanieandgreg.us"
+    "name" : "wedding-site"
   , "version" : "0.0.1"
   , "dependencies" : {
       "bootstrap" : "*"
