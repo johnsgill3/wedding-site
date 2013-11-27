@@ -6,7 +6,7 @@ var config = require('../modules/config')
       service: "Gmail"
     , auth: {
           user: "stephanieandgreg.us@gmail.com"
-        , pass: "mailpasswordsneedtobelong"
+        , pass: "this is a long mail password"
     }
   })
   ;

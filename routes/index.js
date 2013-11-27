@@ -8,6 +8,7 @@ require('./registry');
 require('./rsvp');
 require('./photos');
 require('./manager');
+require('./australia');
 
 app.get('/', function(req,res){
   "use strict";

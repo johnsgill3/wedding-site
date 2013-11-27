@@ -42,7 +42,12 @@ define([
     'webfonts',
     'bootstrap'
     ], function ($,gallery,mygallery) {
+    'use strict';
     //jQuery, canvas and the app/sub module are all
     //loaded and can be used here now.
     //$('#loading').addClass('hide');
+    if($('#mapframe').length){
+      $('#mapframe').show();
+      $('#smalltext').show();
+    }
 });

@@ -8,9 +8,19 @@
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
   <link rel="stylesheet" href="css/main.css">
+  <script type="text/javascript">
+    function showLoader(){
+      var loadiv = document.getElementById('loading');
+      loadiv.style.opacity = '0.95';
+      loadiv.style.display = 'block';
+    }
+  </script>
 </head>
 <body>
-  <div id="loading" style="z-index:9999;opacity:0.95;width:100%;height:100%;position:absolute;top:0;left:0;background-color:#6FC7B9;"></div>
+  <div id="loading" style="z-index:9999;opacity:0.95;width:100%;height:100%;position:absolute;top:0;left:0;background-color:#6FC7B9;display:none;"></div>
+  <script type="text/javascript">
+    showLoader();
+  </script>
 <div class="container">
     <div class="masthead">
     </div>

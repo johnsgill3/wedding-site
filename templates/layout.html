@@ -12,9 +12,19 @@
   <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="components/blueimp-gallery/css/blueimp-gallery.min.css">
+  <script type="text/javascript">
+    function showLoader(){
+      var loadiv = document.getElementById('loading');
+      loadiv.style.opacity = '0.95';
+      loadiv.style.display = 'block';
+    }
+  </script>
 </head>
 <body>
-  <div id="loading" style="z-index:9999;opacity:0.95;width:100%;height:100%;position:absolute;top:0;left:0;background-color:#9AD4C1;"></div>
+  <div id="loading" style="z-index:9999;opacity:0.95;width:100%;height:100%;position:absolute;top:0;left:0;background-color:#9AD4C1;display:none;"></div>
+  <script type="text/javascript">
+    showLoader();
+  </script>
 <div class="container">
     <div class="masthead">
         <!--ul class="nav nav-pills pull-right">

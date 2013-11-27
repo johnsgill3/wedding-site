@@ -35,7 +35,9 @@ app.use(connect.static('/var/node/public', { maxAge: /*86400000*/60000 }));
 
 module.exports = { //ALL_CAPS represent static values, lowercase_stuff are dynamically required resources
   EXPRESS_PORT: 80,
+  EXPRESSL_PORT: 443,
   EXPRESS_BAK_PORT: 8080,
+  EXPRESSL_BAK_PORT: 8443,
   DEBUG: true,
   express : express,
   app : app, //one app to rule them all

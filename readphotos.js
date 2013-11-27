@@ -6,6 +6,11 @@ var models = require('./models/index2')
   , path = require('path')
   , gm = require('gm')
   , async = require('async')
+  , optimist = require('optimist')
+  , argv = optimist
+  .usage('Usage: $0 --sourceDir [str] --destDir [str]')
+  .demand(['sourceDir','destDir'])
+  .argv
   , imgPath = path.join(__dirname,'public','uploads')
   , newImgPath = path.join(__dirname,'public','images','engagement-photos')
   , publicPath = path.join('/images','engagement-photos')
