@@ -2,6 +2,7 @@ var express = require('express')
   , app = express()
   , cons = require('consolidate')
   , connect = require('connect')
+  , path = require('path')
   , swig = require('swig')
   , logger = require('./logger')
   , Session = require('connect-mongodb')
@@ -26,11 +27,11 @@ app.set('view engine','swig');
 
 swig.init({
   cache : app.get('env') === 'production',
-  root: '/var/node/templates/',
+  root: path.join(__dirname,'..','templates'),
   allowErrors:true
 });
-app.set('views','/var/node/templates/');
-app.use(connect.static('/var/node/public', { maxAge: /*86400000*/60000 }));
+app.set('views',path.join(__dirname,'..','templates'));
+app.use(connect.static(path.join(__dirname,'..','public'), { maxAge: /*86400000*/60000 }));
 
 
 module.exports = { //ALL_CAPS represent static values, lowercase_stuff are dynamically required resources
@@ -44,8 +45,8 @@ module.exports = { //ALL_CAPS represent static values, lowercase_stuff are dynam
   swig: swig,
   logger: logger,
   mongoose: mongoose,
-  NODE_ROOT: '/var/node/',
-  UPLOAD_DIR: '/var/node/public/uploads/',
+  NODE_ROOT: path.join(__dirname,'..'),
+  UPLOAD_DIR: path.join(__dirname,'..','public','uploads'),
   PUBLIC_UPLOAD_DIR: '/uploads/',
   NAME: 'your site name',
   EVENT_DESCRIPTION: 'your event description',
