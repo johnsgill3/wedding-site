@@ -31,12 +31,20 @@ var mongoose = require('mongoose')
         medloc:String,
         medsrc:String
   })
-  , Photo = mongoose.model('Photo',photoSchema);
+  , Photo = mongoose.model('Photo',photoSchema)
+  , transactionSchema = new mongoose.Schema({
+    time:Date,
+    amount:Number,
+    _items:[mongoose.Schema.Types.ObjectId]
+  })
+  , Transaction = mongoose.model('Transaction',transactionSchema)
+  ;
 
 mongoose.createConnection('mongodb://localhost/test');
 module.exports = { //ALL_CAPS represent static values, lowercase_stuff are dynamically required resources
   mongoose: mongoose,
   Registry: Registry,
   Media: Media,
-  Photo: Photo
+  Photo: Photo,
+  Transaction: Transaction
 };
