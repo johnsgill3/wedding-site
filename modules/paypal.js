@@ -5,8 +5,8 @@ var http = require('http')
   , config_opts = {
       host:'api.sandbox.paypal.com',
       port:'',
-      client_id:'',
-      client_secret:''
+      client_id:'AcZmwxC5S2PbxVXqcExLTbXq_JsBEXojU3wFUHbjtZA6J1vkIfX9rRQ5E58a',
+      client_secret:'EA-RhxDKtjzfZHYMuNdNiRhQxKu8IAeYR82RawmmLZnh4U6X9qf9A8ZtF4b3'
     }
   ;
 
@@ -43,10 +43,7 @@ var create_payment_json = {
   transactions:[{
     amount:{
       total:'7',
-      currency:'USD',
-      details:{
-        subtotal:'7'
-      }
+      currency:'USD'
     },
     description:'This is the payment transaction description.'
   }]
