@@ -5,7 +5,9 @@ var config = require('./modules/config')
   , swig = config.swig
   , app = config.app
   , logger = config.logger
-  , requireDir = require('require-dir');
+  , requireDir = require('require-dir')
+  , https = require('https')
+  ;
 
 var routes = require('./routes');
 
@@ -14,6 +16,11 @@ if(!module.parent){
   app.use(logger);
   try{
     app.listen(config.EXPRESS_PORT);
+    https.createServer({
+      key:config.EXPRESS_KEY,
+      ca:config.EXPRESS_CA,
+      cert:config.EXPRESS_CERT
+    },app).listen(config.EXPRESSL_PORT);
   }catch(e){
     console.log('couldnt start on port '+config.EXPRESS_PORT+': '+e+'\nstarting on port '+config.EXPRESS_BAK_PORT);
     app.listen(config.EXPRESS_BAK_PORT);

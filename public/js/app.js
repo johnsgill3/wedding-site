@@ -1,6 +1,6 @@
 requirejs.config({
     //By default load any module IDs from js/lib
-    baseUrl: 'components',
+    baseUrl: '/components',
     //except, if the module ID starts with "app",
     //load it from the js/app directory. paths
     //config is relative to the baseUrl, and
@@ -15,7 +15,8 @@ requirejs.config({
         'gallery-min': 'blueimp-gallery/js/jquery.blueimp-gallery.min',
         gallery: 'blueimp-gallery/js/jquery.blueimp-gallery',
         raphael: '../js/raphael.min',
-        mygallery: '../js/gallery'
+        mygallery: '../js/gallery',
+        coinbase: 'https://coinbase.com/assets/button'
     },
     shim: {
         bootstrap: ['jquery'],
@@ -40,7 +41,8 @@ define([
     'mygallery',
     'raphael',
     'webfonts',
-    'bootstrap'
+    'bootstrap',
+    'coinbase'
     ], function ($,gallery,mygallery) {
     'use strict';
     //jQuery, canvas and the app/sub module are all

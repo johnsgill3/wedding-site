@@ -21,6 +21,19 @@ app.get('/photos',function(req,res){
     });
 });
 
+app.get('/photos/:category',function(req,res){
+  "use strict";
+  Photo.find({category:req.params.category,shown:true}).lean().sort({order:1}).exec(function(err,photos){
+    res.render('photos',{
+      name: 'stephanieandgreg.us - Photos '+req.params.category,
+      photos:photos,
+      errordiv:err?'':'hidden',
+      error:err,
+      thanksdiv:'hidden'
+    });
+  });
+});
+
 app.get('/photos/all',function(req,res){
   'use strict';
   fs.unlink('/tmp/photos.zip',function(error){

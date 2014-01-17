@@ -2,11 +2,13 @@ var express = require('express')
   , app = express()
   , cons = require('consolidate')
   , connect = require('connect')
+  , path = require('path')
   , swig = require('swig')
   , logger = require('./logger')
   , Session = require('connect-mongodb')
   , Db = require('mongodb').Db
   , Server = require('mongodb').Server
+  , fs = require('fs')
   , mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/test');
 app.use(express.compress());
@@ -20,6 +22,18 @@ app.use(express.session(
     secret:'thisisacorrecthorsesecretbatterystaplesecret'}
 ));
 
+var EXPRESS_KEY, EXPRESS_CERT, EXPRESS_CA;
+
+try{
+  /*jslint stupid:true*/
+  EXPRESS_KEY = fs.readFileSync(__dirname+'/../certs/prv.key');
+  EXPRESS_CERT = fs.readFileSync(__dirname+'/../certs/cert.pem');
+  EXPRESS_CA = [fs.readFileSync(__dirname+'/../certs/ca.pem')];
+  EXPRESS_CA.push(fs.readFileSync(__dirname+'/../certs/int.pem'));
+  /*jslint stupid:false*/
+} catch(err){
+  console.error(err);
+}
 
 app.engine('swig',cons.swig);
 app.set('view engine','swig');
@@ -38,6 +52,9 @@ module.exports = { //ALL_CAPS represent static values, lowercase_stuff are dynam
   EXPRESSL_PORT: 443,
   EXPRESS_BAK_PORT: 8080,
   EXPRESSL_BAK_PORT: 8443,
+  EXPRESS_KEY: EXPRESS_KEY,
+  EXPRESS_CERT: EXPRESS_CERT,
+  EXPRESS_CA: EXPRESS_CA,
   DEBUG: true,
   express : express,
   app : app, //one app to rule them all
