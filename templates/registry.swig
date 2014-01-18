@@ -99,7 +99,7 @@
         <div class="muted text-center">A Future Mr. &amp; Mrs. Cochard Creation &copy; 2013 all rights reserved</div>
       </div>
     </div>
-    <a class="coinbase-button hidden" data-code="132021c44bfebd77e2c12592ea9632e5" data-button-style="none" data-custom="donate_btn_1" href="https://coinbase.com/checkouts/132021c44bfebd77e2c12592ea9632e5">Donate Bitcoins</a>
+    <div class="coinbase-button" data-code="132021c44bfebd77e2c12592ea9632e5" data-button-style="none" data-custom="donate_btn_1" href="https://coinbase.com/checkouts/132021c44bfebd77e2c12592ea9632e5"></div>
     <script data-main="/js/app.js" src="/components/requirejs/require.js"></script>
   </body>
 </html>
