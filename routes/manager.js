@@ -1,6 +1,7 @@
 /*jslint node:true*/
 var config = require('../modules/config')
   , app = config.app
+  , express = config.express
   , mongoose = config.mongoose
   , models = require('../models')
   , Registry = models.Registry
@@ -9,7 +10,23 @@ var config = require('../modules/config')
   , path = require('path')
   , fs = require('fs');
 
-app.get('/manager',function(req,res){
+var redir = function(req,res,next){
+  'use strict';
+  if(!req.secure && /manager/.test(req.path)){
+    res.redirect('https://stephanieandgreg.us/manager');
+  } else {
+    next();
+  }
+};
+var basicAuth = express.basicAuth(function(user,pass){
+  'use strict';
+  switch(user){
+  case 'greg': return 'adminpass' === pass;
+  case 'steph': return 's1tephie' === pass;
+  default: return false;
+  }
+});
+app.get('/manager',redir,basicAuth,function(req,res){
     "use strict";
     if(req.query.create){
         var newReg = new Registry();
@@ -44,7 +61,7 @@ app.get('/manager',function(req,res){
     }
 });
 
-app.post('/manager',function(req,res){
+app.post('/manager',redir,basicAuth,function(req,res){
     "use strict";
     var newReg = new Registry();
     newReg.name = 'test';
@@ -56,7 +73,7 @@ app.post('/manager',function(req,res){
     });
 });
 
-app.post('/manager/upload',function(req,res){
+app.post('/manager/upload',redir,basicAuth,function(req,res){
     "use strict";
     console.log(req.files);
     console.log(req.query);
@@ -115,14 +132,14 @@ app.post('/manager/upload',function(req,res){
   }
 });
 
-app.put('/manager/:id',function(req,res){
+app.put('/manager/:id',redir,basicAuth,function(req,res){
     "use strict";
     var id = req.params.id
       , newdata = req.body.newdata;
     res.json({query:req.query,body:req.body,params:req.params});
 });
 
-app.put('/manager/photo/:id',function(req,res){
+app.put('/manager/photo/:id',redir,basicAuth,function(req,res){
     "use strict";
     console.log(req.body);
     var id = req.params.id
@@ -132,7 +149,7 @@ app.put('/manager/photo/:id',function(req,res){
     });
 });
 
-app.put('/manager/:id/:member/:memberdata',function(req,res){
+app.put('/manager/:id/:member/:memberdata',redir,basicAuth,function(req,res){
     "use strict";
     var id = req.params.id
       , member = req.params.member
@@ -164,7 +181,7 @@ app.put('/manager/:id/:member/:memberdata',function(req,res){
     }
 });
 
-app.delete('/manager',function(req,res){
+app.delete('/manager',redir,basicAuth,function(req,res){
     "use strict";
     if(req.body._id){
         Registry.findOne({_id:req.body._id},function(err,regEntry){

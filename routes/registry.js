@@ -22,7 +22,7 @@ app.get('/registry',function(req,res){
   });
 });
 
-app.all('/registry_thanks',function(req,res){
+app.all('/registry/thanks',function(req,res){
   var trnId = req.body?req.body.txn_id:req.query?req.query.txn_id:'';
   console.log('query: %s\nbody: %s',JSON.stringify(req.query),JSON.stringify(req.body));
   res.render('registry',{
@@ -33,7 +33,7 @@ app.all('/registry_thanks',function(req,res){
   });
 });
 
-app.get('/registry_why',function(req,res){
+app.get('/registry/why',function(req,res){
   res.render('registry',{
     name:'stephaneiandgreg.us - Registry',
     errordiv:'',

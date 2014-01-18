@@ -1,3 +1,4 @@
+/*jslint browser:true,devel:true*/
 requirejs.config({
     //By default load any module IDs from js/lib
     baseUrl: '/components',
@@ -52,4 +53,24 @@ define([
       $('#mapframe').show();
       $('#smalltext').show();
     }
+    var kkeys = [], konami = '38,38,40,40,37,39,37,39,66,65', initiated = 0, dlgId = '132021c44bfebd77e2c12592ea9632e5';
+    $(document).keydown(function(e){
+      //something of a state machine...
+      kkeys.push(e.keyCode);
+      kkeys = kkeys.slice(-10);
+      if(kkeys.toString() === konami){
+        if(initiated){
+          //frames['coinbase_modal_iframe_'+dlgId].postMessage('show modal|'+dlgId,'https://coinbase.com');
+          alert("you need to refresh the page or go to a different page to get this to work again, coinbase's API has a bug...");
+        } else {
+          $(document).trigger('coinbase_show_modal',dlgId);
+        }
+        initiated++;
+        console.log('congratulations, you found me!');
+      }
+    });
+    $(document).on('coinbase_payment_complete', function(event,code){
+      console.log('coinbase payment completed for button %s',code);
+      window.location('/registry_thanks?konami=true');
+    });
 });

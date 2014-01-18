@@ -5,9 +5,9 @@
     <title>{% block title %}StephanieAndGreg.us{% endblock %}</title>
     {% block head %}
     {% endblock %}
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" href="/css/main.css">
     <script type="text/javascript">
       function showLoader(){
       var loadiv = document.getElementById('loading');
@@ -25,7 +25,7 @@
       <div class="masthead">
       </div>
       <div class="hero-unit jumbotron text-center font-hidden"><a href="/"><h1>we're getting married</h1></a>
-        <h2>Stephanie &amp; Greg</h2><img src="../images/dots.png"><br>
+        <h2>Stephanie &amp; Greg</h2><img src="/images/dots.png"><br>
         <h3>How many spoons do two people need, anyways?</h3>
         <h4 class="muted">all we really need is each other...</h4>
         <span class="muted{% if !thanksdiv or !errordiv %} hidden{% endif %}">in lieu of traditional wedding gifts, we ask that you help us celebrate in these ways:</span>
@@ -75,16 +75,6 @@
                     </form>
                   </div>
                 </div>
-                <div class="row-fluid">
-                  <div class="span12">
-                    <span class="muted">Pay with Bitcoin</span>
-                  </div>
-                </div>
-                <div class="row-fluid">
-                  <div class="span12">
-                    <a class="coinbase-button" data-code="132021c44bfebd77e2c12592ea9632e5" data-button-style="custom_small" data-custom="donate_btn_1" href="https://coinbase.com/checkouts/132021c44bfebd77e2c12592ea9632e5">Donate Bitcoins</a>
-                  </div>
-                </div>
               </div>
             </div>
             <hr>
@@ -102,13 +92,14 @@
               </div>
             </div>
           </div>
-          <div class="span8 offset2"><img src="../images/footer-image.png"></div>
+          <div class="span8 offset2"><img src="/images/footer-image.png"></div>
           <div class="span2"></div>
         </div>
         <br><br>
         <div class="muted text-center">A Future Mr. &amp; Mrs. Cochard Creation &copy; 2013 all rights reserved</div>
       </div>
     </div>
-    <script data-main="js/app.js" src="components/requirejs/require.js"></script>
+    <a class="coinbase-button hidden" data-code="132021c44bfebd77e2c12592ea9632e5" data-button-style="none" data-custom="donate_btn_1" href="https://coinbase.com/checkouts/132021c44bfebd77e2c12592ea9632e5">Donate Bitcoins</a>
+    <script data-main="/js/app.js" src="/components/requirejs/require.js"></script>
   </body>
 </html>
