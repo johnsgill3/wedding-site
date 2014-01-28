@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "dependencies": {
     "express": "3.1.0",
+    "spdy": "1.19.1",
     "connect": "2.7.9",
     "swig": "0.13.5",
     "consolidate": "0.8.0",

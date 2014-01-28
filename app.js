@@ -7,6 +7,12 @@ var config = require('./modules/config')
   , logger = config.logger
   , requireDir = require('require-dir')
   , https = require('https')
+  , spdy = require('spdy')
+  , options = {
+      key:config.EXPRESS_KEY,
+      ca:config.EXPRESS_CA,
+      cert:config.EXPRESS_CERT
+    }
   ;
 
 var routes = require('./routes');
@@ -16,11 +22,8 @@ if(!module.parent){
   app.use(logger);
   try{
     app.listen(config.EXPRESS_PORT);
-    https.createServer({
-      key:config.EXPRESS_KEY,
-      ca:config.EXPRESS_CA,
-      cert:config.EXPRESS_CERT
-    },app).listen(config.EXPRESSL_PORT);
+    //https.createServer(options,app).listen(config.EXPRESSL_PORT);
+    spdy.createServer(options,app).listen(config.EXPRESSL_PORT);
   }catch(e){
     console.log('couldnt start on port '+config.EXPRESS_PORT+': '+e+'\nstarting on port '+config.EXPRESS_BAK_PORT);
     app.listen(config.EXPRESS_BAK_PORT);

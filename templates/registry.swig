@@ -19,7 +19,7 @@
   <body>
     <div id="loading" style="z-index:9999;opacity:0.95;width:100%;height:100%;position:absolute;top:0;left:0;background-color:#6FC7B9;display:none;"></div>
     <script type="text/javascript">
-      showLoader();
+      //showLoader();
     </script>
     <div class="container">
       <div class="masthead">
@@ -31,17 +31,17 @@
         <span class="muted{% if !thanksdiv or !errordiv %} hidden{% endif %}">in lieu of traditional wedding gifts, we ask that you help us celebrate in these ways:</span>
         <div class="row-fluid text-center">
           <div class="span12">
-            <div class="row">
+            <div class="row-fluid">
               <div class="span6 offset3">
                 <div class="alert alert-success {{thanksdiv}}">{{thanks|raw}}</div>
                 <div class="alert alert-error {{errordiv}}">{{error|raw}}</div>
               </div>
             </div>
-            <div class="row">
+            <div class="row-fluid">
               <div class="span6 offset3">
+                {#
                 <span class="muted">make a gift in any amount to the happy couple:</span>
                 <br>
-                {#
                 <div class="row-fluid">
                   <div class="span12">
                     <div class="input-prepend">
@@ -50,12 +50,12 @@
                     </div>
                   </div>
                 </div>
-                #}
                 <div class="row-fluid">
                   <div class="span12">
                     <span class="muted">Pay with Paypal/Credit Card</span>
                   </div>
                 </div>
+                #}
                 <div class="row-fluid">
                   <div class="span12">
                     {# TEST BUTTON DO NOT USE FOR PRODUCTION
@@ -70,7 +70,8 @@
                     <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
                       <input type="hidden" name="cmd" value="_s-xclick">
                       <input type="hidden" name="hosted_button_id" value="BV6NM6ZATLRS6">
-                      <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                      <button class="btn muted" type="submit" name="submit" value="">Make a gift in any amount<br>to the happy couple:<br>$&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nospaces">_____</span></button>
+                      <!-- input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!" -->
                       <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
                     </form>
                   </div>
@@ -78,7 +79,7 @@
               </div>
             </div>
             <hr>
-            <div class="row">
+            <div class="row-fluid">
               <div class="span6 offset3">
                 B.Y.O.T.<br>
                 (bring your own toy)<br>
@@ -92,8 +93,10 @@
               </div>
             </div>
           </div>
-          <div class="span8 offset2"><img src="/images/footer-image.png"></div>
-          <div class="span2"></div>
+          <div class="row-fluid">
+            <div class="span8 offset2"><img src="/images/footer-image.png"></div>
+            <div class="span2"></div>
+          </div>
         </div>
         <br><br>
         <div class="muted text-center">A Future Mr. &amp; Mrs. Cochard Creation &copy; 2013 all rights reserved</div>

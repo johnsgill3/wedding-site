@@ -91,6 +91,14 @@ form .btn {
     padding-top:8px;
 }
 
+form .btn.muted {
+    color: #999;
+}
+
+form .btn.muted .nospaces {
+    letter-spacing: -14px;
+}
+
 .bottom-right-border {
     border-bottom: 2px solid #ED8474;
     border-right: 2px solid #ED8474;

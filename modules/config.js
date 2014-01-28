@@ -12,6 +12,17 @@ var express = require('express')
   , mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/test');
 app.use(express.compress());
+app.use(function(req,res,next){
+    'use strict';
+    if(req.subdomains.length !== 0){
+      console.log('redirecting from '+req.host+' to '+req.protocol+'://stephanieandgreg.us');
+      res.redirect(301,req.protocol+'://stephanieandgreg.us');
+      res.end();
+    } else {
+      next();
+    }
+});
+
 app.use(express.bodyParser());
 app.use(express.cookieParser());
 app.use(express.session(
@@ -44,7 +55,7 @@ swig.init({
   allowErrors:true
 });
 app.set('views',path.join(__dirname,'..','templates'));
-app.use(connect.static(path.join(__dirname,'..','public'), { maxAge: /*86400000*/60000 }));
+app.use(connect.static(path.join(__dirname,'..','public'), { maxAge: /*86400000*/300000 }));
 
 
 module.exports = { //ALL_CAPS represent static values, lowercase_stuff are dynamically required resources
