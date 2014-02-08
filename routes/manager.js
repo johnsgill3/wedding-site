@@ -21,8 +21,8 @@ var redir = function(req,res,next){
 var basicAuth = express.basicAuth(function(user,pass){
   'use strict';
   switch(user){
-  case 'greg': return 'basicauthpasswordsshouldbelong' === pass;
-  case 'steph': return 's1tephie' === pass;
+  case 'greg': return 'basic auth passwords should be long' === pass;
+  case 'steph': return 's1tephie is your normal password' === pass;
   default: return false;
   }
 });
@@ -64,7 +64,7 @@ app.get('/manager',redir,basicAuth,function(req,res){
 app.get('/manager/restart',redir,basicAuth,function(req,res){
   'use strict';
   res.end('<html><head><meta http-equiv="refresh" content="5; url=/manager"></head><body>restarted server...redirecting in 5 seconds</body></html>');
-  process.setImmediate(process.exit);
+  setTimeout(process.exit,500);
 });
 
 app.post('/manager',redir,basicAuth,function(req,res){
