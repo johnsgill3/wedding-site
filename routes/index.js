@@ -4,7 +4,7 @@ var config = require('../modules/config')
   , path = require('path')
   ;
 
-require('./restart');
+//require('./restart');
 require('./send');
 require('./registry');
 require('./rsvp');

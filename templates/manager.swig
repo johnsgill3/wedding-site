@@ -14,6 +14,11 @@
     <div class="hero-unit jumbotron text-center font-hidden"><h4>we're getting married, er...managed</h4>
       <div class="row-fluid text-center">
         <div class="span12">
+          <div class="pull-right">
+            <a href="/manager/restart">Restart Server</a>
+          </div>
+        </div>
+        <div class="span12">
           <form class="form-horizontal" id="manage" action="/manager" method="post">
             <h5>Registry Items</h5>
               <table id="registry-manager" class="table table-striped">
