@@ -18,7 +18,7 @@ spdycache.appjs = fs.readFileSync(path.join(__dirname,'..','public/js/app.js'));
 
 app.get('/', function(req,res){
   "use strict";
-  if(res.push){
+  if(res.isSpdy){
     var pushcb = function(name,filepath){
       return function(err,stream){
         console.log('pushing %s, err: %s',name,err);
