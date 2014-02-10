@@ -41,11 +41,13 @@ app.get('/', function(req,res){
     var pushit = function(pubpath,content,name){
       res.push(pubpath,{'content-type':content},pushcb(name,pubpath));
     };
+    /*
     pushit('/components/require/require.js','application/javascript','requirejs');
     pushit('/js/app.js','application/javascript','appjs');
     pushit('/css/bootstrap-responsive.css','text/css','boostrapcss');
     pushit('/css/main.css','text/css','maincss');
     pushit('/components/blueimp-gallery/css/blueimp-gallery.min.css','text/css','blueimpcss');
+    */
   }
   res.render('index',{name:'stephanieandgreg.us',
     h1:'The wedding of Stephanie Schmidt and Greg Cochard',

@@ -38,6 +38,16 @@ var mongoose = require('mongoose')
     _items:[mongoose.Schema.Types.ObjectId]
   })
   , Transaction = mongoose.model('Transaction',transactionSchema)
+  , rsvpSchema = new mongoose.Schema({
+firstName:String,
+lastName:String,
+attending:Boolean,
+meal:String,
+song:String,
+message:String,
+timestamp:{type:Date,default: Date.now}
+})
+  , Rsvp = mongoose.model('Rsvp',rsvpSchema)
   ;
 
 mongoose.createConnection('mongodb://localhost/test');
@@ -46,5 +56,6 @@ module.exports = { //ALL_CAPS represent static values, lowercase_stuff are dynam
   Registry: Registry,
   Media: Media,
   Photo: Photo,
-  Transaction: Transaction
+  Transaction: Transaction,
+  Rsvp: Rsvp
 };

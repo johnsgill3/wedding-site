@@ -28,7 +28,7 @@
         <h2>Stephanie &amp; Greg</h2><img alt="dots" src="/images/dots.png"><br>
         <h3>How many spoons do two people need, anyways?</h3>
         <h4 class="muted">all we really need is each other...</h4>
-        <span class="muted{% if !thanksdiv or !errordiv %} hidden{% endif %}">in lieu of traditional wedding gifts, we ask that you help us celebrate in these ways:</span>
+        <span class="muted{% if !thanksdiv or !errordiv %} hidden{% endif %}">in lieu of traditional wedding gifts, we ask that you help us celebrate by making a gift to our &quot;Honeyfund.&quot;</span>
         <div class="row-fluid text-center">
           <div class="span12">
             <div class="row-fluid">
@@ -39,23 +39,6 @@
             </div>
             <div class="row-fluid">
               <div class="span6 offset3">
-                {#
-                <span class="muted">make a gift in any amount to the happy couple:</span>
-                <br>
-                <div class="row-fluid">
-                  <div class="span12">
-                    <div class="input-prepend">
-                      <span class="add-on muted">$</span>
-                      <input class="span8" type="text" placeholder="100"/>
-                    </div>
-                  </div>
-                </div>
-                <div class="row-fluid">
-                  <div class="span12">
-                    <span class="muted">Pay with Paypal/Credit Card</span>
-                  </div>
-                </div>
-                #}
                 <div class="row-fluid">
                   <div class="span12">
                     {# TEST BUTTON DO NOT USE FOR PRODUCTION
@@ -70,8 +53,8 @@
                     <div class="row-fluid">
                       <div class="span12">
                         <address>
-                          Make a gift in the form of a check. Please mail to:<br>
-                          Stephanie and Greg Cochard<br>
+                          <span class="muted">Mail to:</span><br><br>
+                          Stephanie &amp; Greg<br>
                           319 Avenida Cabrillo Apt C<br>
                           San Clemente, CA 92672
                         </address>
@@ -80,16 +63,11 @@
                     <hr>
                     <div class="row-fluid">
                       <div class="span12">
-                        Bring a Card with a gift enclosed
-                      </div>
-                    </div>
-                    <hr>
-                    <div class="row-fluid">
-                      <div class="span12">
+                        <span class="muted">Make a gift online:</span><br>
                         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
                           <input type="hidden" name="cmd" value="_s-xclick">
                           <input type="hidden" name="hosted_button_id" value="BV6NM6ZATLRS6">
-                          <button class="btn muted" type="submit" name="submit" value="">Make a gift in any amount<br>to the happy couple:<br>$&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nospaces">_____</span></button>
+                          <button class="btn muted" type="submit" name="submit" value="">$&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nospaces">_____</span>&nbsp;&nbsp;&nbsp;</button>
                           <!-- input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!" -->
                           <img alt="" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
                         </form>
@@ -115,7 +93,7 @@
             </div>
             <hr>
             <div class="row-fluid">
-              <div class="span12">If you have any questions, please feel free to <a href="/contact">Drop us a note</a></div>
+              <div class="span12">If you have any questions, please feel free to <a href="/contact">drop us a note</a>.</div>
             </div>
             <div class="row-fluid">
               <div class="span8 offset2"><img alt="footer" src="/images/footer-image.png"></div>
