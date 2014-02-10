@@ -49,7 +49,7 @@
           <div class="required-message">This is a required question</div>
         </div>
         <div id="yesoption" class="hidden">
-          <div class="control-group">
+          <div class="control-group" id="mealgroup">
             <label aria-hidden="true" for="meal">Your Meal Choice <span class="required-asterisk">*</span>
             </label>
             <ul class="ss-choices" aria-label="Your Meal Choice">

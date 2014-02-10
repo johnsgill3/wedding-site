@@ -35,6 +35,73 @@ requirejs.config({
     }
 });
 
+var modules = {};
+
+modules.rsvp = (function(){
+  'use strict';
+  return {
+    init: function($){
+      var mealcache = null;
+      $('#rsvpform').show('fast');
+      $('#rsvpform').on('click','input[type="radio"][name="attending"]',function(e){
+        var $target = $(e.target);
+        if($target.val() === 'Accept with pleasure'){
+          if(mealcache){
+            $('#yesoption').prepend(mealcache);
+            mealcache = null;
+          }
+          $('#yesoption').css('visibility','visible');
+          $('#yesoption').show('fast');
+          $('#nooption').hide('fast');
+        } else {
+          mealcache = $('#mealgroup').detach();
+          $('#nooption').css('visibility','visible');
+          $('#nooption').show('fast');
+          $('#yesoption').hide('fast');
+        }
+        $('#submit').css('visibility','visible');
+        $('#submit').show('fast');
+      });
+      $('#rsvpform').on('submit',function(e){
+        var att = $('#attending').is(':checked');
+        e.preventDefault();
+        //submit via ajax
+        $.ajax('/rsvp',{
+          type:'POST',
+          data:{
+            firstName:$('#rsvpform input[name="First Name"]').val(),
+            lastName :$('#rsvpform input[name="Last Name"]').val(),
+            attending:att,
+            meal     :$('#rsvpform input[name="meal"]:checked').val(),
+            song     :$('#songchoice').val(),
+            message  :$('#wellwishes').val()
+          }
+        }).success(function(data){
+          $('#rsvpform').hide('fast');
+          $('#thanks').css('visibility','visible');
+          $('#thanks').show('fast');
+          if(data.thanks){
+            $('#thanks .thanksmsg').html(data.thanks);
+          }
+          if(!att){
+            $('#thanks .thanksmsg').html('Your RSVP was successful. We will miss you.');
+          }
+          if(data.another===false || !att){
+            $('#thanks .anothermsg').hide();
+          }
+          $('#thanks .anothermsg').off('click').on('click',function(e){
+            e.preventDefault();
+            $('#thanks, #nooption, #yesoption, #submit').hide();
+            $('#rsvpform')[0].reset();
+            $('#rsvpform').show('fast');
+            return false;
+          });
+        });
+        return false;
+      });
+    }
+  };
+}());
 
 define([
     'jquery',
@@ -50,8 +117,8 @@ define([
     //loaded and can be used here now.
     //$('#loading').addClass('hide');
     if($('#mapframe').length){
-      $('#mapframe').show();
-      $('#smalltext').show();
+      $('#mapframe').show('fast');
+      $('#smalltext').show('fast');
     }
     var kkeys = [], konami = '38,38,40,40,37,39,37,39,66,65', initiated = 0, dlgId = '132021c44bfebd77e2c12592ea9632e5';
     $(document).keydown(function(e){
@@ -73,4 +140,7 @@ define([
       console.log('coinbase payment completed for button %s',code);
       window.location('/registry_thanks?konami=true');
     });
+    if($('#rsvpform').length){
+      modules.rsvp.init($);
+    }
 });
