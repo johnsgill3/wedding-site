@@ -58,7 +58,7 @@
                   <span class="ss-choice-item-control inline-block">
                     <input type="radio" id="meal" name="meal" value="Prime Rib" role="radio" class="ss-q-radio required" aria-checked="false" aria-label="Prime Rib" required>
                   </span>
-                  <span class="muted ss-choice-label">Prime Rib</span>
+                  <span class="muted ss-choice-label" id="primerib">Prime Rib</span>
                 </label>
               </li>
               <li class="ss-choice-item">
@@ -66,7 +66,7 @@
                   <span class="ss-choice-item-control inline-block">
                     <input type="radio" name="meal" value="Fish" role="radio" class="ss-q-radio required" aria-checked="false" aria-label="Fish" required>
                   </span>
-                  <span class="muted ss-choice-label">Fish</span>
+                  <span class="muted ss-choice-label" id="fish">Fish</span>
                 </label>
               </li>
               <li class="ss-choice-item">
@@ -108,6 +108,16 @@
       </div>
       <script type="text/javascript">
         document.getElementById('rsvpform').style.display = 'none';
+        var hiddenO = document.createElement('span');
+        hiddenO.style.visibility = 'hidden';
+        hiddenO.innerHTML = 'O';
+        var primerib = document.getElementById('primerib');
+        primerib.parentNode.insertBefore(hiddenO, primerib.nextSibling);
+        var hiddenM = document.createElement('span');
+        hiddenM.style.visibility = 'hidden';
+        hiddenM.innerHTML = 'MMM';
+        var fish = document.getElementById('fish');
+        fish.parentNode.insertBefore(hiddenM, fish.nextSibling);
       </script>
       <hr>
       If you have any questions, please feel free to <a href="/contact">drop us a note</a>.
