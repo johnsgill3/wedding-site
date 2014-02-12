@@ -5,6 +5,14 @@ var config = require('../modules/config')
   , models = require('../models')
   , Registry = models.Registry
   , Transaction = models.Transaction
+  , nodemailer = require('nodemailer')
+  , smtpTransport = nodemailer.createTransport("SMTP",{
+      service: "Gmail"
+    , auth: {
+          user: 'stephanieandgreg.us@gmail.com'
+        , pass: 'this is a long mail password'
+    }
+  })
   ;
 //mongoose.connect('mongodb://localhost/test');
 app.get('/registry',function(req,res){
@@ -55,6 +63,22 @@ app.param('method',paramfn('paymethod'));
 app.param('type',paramfn('paytype'));
 app.all('/yougotpaid/with/:method/as/:type',function(req,res){
   console.log('got paid with %s as a %s',req.paymethod,req.paytype);
+  if(req.paymethod === 'paypal'){
+    var fullname = req.body.first_name+' '+req.body.last_name;
+    var total = req.body.payment_gross;
+    var mailtext = 'You received a payment of $'+total+' from '+fullname;
+    var mailOptions = {
+      from: 'mailer@stephanieandgreg.us',
+      to: 'stephanieandgreg.us@gmail.com',
+      subject: 'Payment from '+fullname,
+      text: mailtext
+    };
+    smtpTransport.sendMail(mailOptions,function(err,response){
+      if(err){
+        console.log(err);
+      }
+    });
+  }
   console.log('query: %s\nbody: %s',JSON.stringify(req.query),JSON.stringify(req.body));
   res.end();
 });

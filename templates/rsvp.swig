@@ -39,7 +39,7 @@
             <li class="ss-choice-item">
               <label>
                 <span class="ss-choice-item-control inline-block">
-                  <input type="radio" name="attending" value="Decline with regret" role="radio" class="ss-q-radio required" aria-checked="false" aria-label="Decline with regret" required>
+                  <input type="radio" name="attending" value="Decline with regret" style="margin-left:-0.9em;" role="radio" class="ss-q-radio required" aria-checked="false" aria-label="Decline with regret" required>
                 </span>
                 <span class="muted ss-choice-label">Decline with regret</span>
               </label>
@@ -56,7 +56,7 @@
               <li class="ss-choice-item">
                 <label>
                   <span class="ss-choice-item-control inline-block">
-                    <input type="radio" id="meal" name="meal" value="Prime Rib" role="radio" class="ss-q-radio required" aria-checked="false" aria-label="Prime Rib" required>
+                    <input type="radio" id="meal" name="meal" value="Prime Rib" style="margin-left:-0.9em;" role="radio" class="ss-q-radio required" aria-checked="false" aria-label="Prime Rib" required>
                   </span>
                   <span class="muted ss-choice-label" id="primerib">Prime Rib</span>
                 </label>
@@ -64,9 +64,9 @@
               <li class="ss-choice-item">
                 <label>
                   <span class="ss-choice-item-control inline-block">
-                    <input type="radio" name="meal" value="Fish" role="radio" class="ss-q-radio required" aria-checked="false" aria-label="Fish" required>
+                    <input type="radio" name="meal" value="Chicken" style="margin-left:-1.5em;" role="radio" class="ss-q-radio required" aria-checked="false" aria-label="Chicken" required>
                   </span>
-                  <span class="muted ss-choice-label" id="fish">Fish</span>
+                  <span class="muted ss-choice-label" id="chicken">Chicken</span>
                 </label>
               </li>
               <li class="ss-choice-item">
@@ -108,16 +108,6 @@
       </div>
       <script type="text/javascript">
         document.getElementById('rsvpform').style.display = 'none';
-        var hiddenO = document.createElement('span');
-        hiddenO.style.visibility = 'hidden';
-        hiddenO.innerHTML = 'O';
-        var primerib = document.getElementById('primerib');
-        primerib.parentNode.insertBefore(hiddenO, primerib.nextSibling);
-        var hiddenM = document.createElement('span');
-        hiddenM.style.visibility = 'hidden';
-        hiddenM.innerHTML = 'MMM';
-        var fish = document.getElementById('fish');
-        fish.parentNode.insertBefore(hiddenM, fish.nextSibling);
       </script>
       <hr>
       If you have any questions, please feel free to <a href="/contact">drop us a note</a>.
