@@ -6,6 +6,7 @@ var config = require('../modules/config')
   , models = require('../models')
   , Registry = models.Registry
   , Photo = models.Photo
+  , Rsvp = models.Rsvp
   , _ = require('lodash')
   , path = require('path')
   , fs = require('fs');
@@ -26,39 +27,67 @@ var basicAuth = express.basicAuth(function(user,pass){
   default: return false;
   }
 });
-app.get('/manager',redir,basicAuth,function(req,res){
-    "use strict";
-    if(req.query.create){
-        var newReg = new Registry();
-        newReg.name = 'test';
-        newReg.desc = 'test desc';
-        newReg.img = {src: '',title: 'test title!'};
-        newReg.price = 100;
-        newReg.save(function(err,saved){
-            res.json({err:err,saved:saved});
-        });
+app.get('/manager/rsvps',redir,basicAuth,function(req,res){
+  'use strict';
+  Rsvp.find().lean().sort('timestamp').exec(function(err,rsvps){
+    var i=0,ii=rsvps.length,str='',line='',index='';
+    for(i=0;i<ii;i++){
+      line = '';
+      for(index in rsvps[i]){
+        if(index !== '__v' && index !== '_id'){
+          if(line !== '') {line += ',';}
+          if(i===0){
+            if(str !== ''){ str+= ',';}
+            str += index;
+          }
+          if(rsvps[i][index]){
+            line += rsvps[i][index];
+          } else {
+            line += '""';
+          }
+        }
+      }
+      if(i===0){
+        str+='\r\n';
+      }
+      str+=line+'\r\n';
     }
-    else{
-        Registry.find().lean().exec(function(err,registryEntries){
-          Photo.find().lean().sort("order").exec(function(err2,photos){
-            if(err && err2){
-              err = {regErr:err,picErr:err2};
-            } else if(err2){
-              err = {picErr:err2};
-            } else if(err){
-              err = {regErr:err};
-            }
-            res.render('manager',{
-                name:'stephanieandgreg.us - Manager',
-                items: registryEntries,
-                imgs: photos,
-                error: err,
-                errordiv: err?'':'hidden',
-                thanksdiv: 'hidden'
-            });
+    res.type('text/csv');
+    res.send(str);
+  });
+});
+app.get('/manager',redir,basicAuth,function(req,res){
+  "use strict";
+  if(req.query.create){
+    var newReg = new Registry();
+    newReg.name = 'test';
+    newReg.desc = 'test desc';
+    newReg.img = {src: '',title: 'test title!'};
+    newReg.price = 100;
+    newReg.save(function(err,saved){
+      res.json({err:err,saved:saved});
+    });
+  }
+  else{
+    Registry.find().lean().exec(function(err,registryEntries){
+      Photo.find().lean().sort("order").exec(function(err2,photos){
+        Rsvp.find().lean().sort('timestamp').exec(function(err3,rsvps){
+          if(err || err2 || err3){
+            err = {regErr:err,picErr:err2,rsvpErr:err3};
+          }
+          res.render('manager',{
+            name:'stephanieandgreg.us - Manager',
+            items: registryEntries,
+            imgs: photos,
+            rsvps: rsvps,
+            error: err,
+            errordiv: err?'':'hidden',
+            thanksdiv: 'hidden'
           });
         });
-    }
+      });
+    });
+  }
 });
 
 app.get('/manager/restart',redir,basicAuth,function(req,res){

@@ -14,7 +14,7 @@ mongoose.connect('mongodb://localhost/test');
 app.use(express.compress());
 app.use(function(req,res,next){
     'use strict';
-    if(req.subdomains.length !== 0){
+    if(req.subdomains && req.subdomains.length !== 0){
       console.log('redirecting from '+req.host+' to '+req.protocol+'://stephanieandgreg.us');
       res.redirect(301,req.protocol+'://stephanieandgreg.us');
       res.end();

@@ -20,6 +20,21 @@
         </div>
         <div class="span12">
           <form class="form-horizontal" id="manage" action="/manager" method="post">
+            <h5>RSVPs</h5>
+            <table id="rsvp-manager" class="table table-striped">
+              <tr>
+                <th>Name</th><th>Attending?</th><th>Meal</th><th>Song</th><th>Message</th>
+              </tr>
+              {% for person in rsvps %}
+              <tr>
+                <td>{{person.firstName}} {{person.lastName}}</td>
+                <td>{% if person.attending %}Yes{% else %}No{% endif %}</td>
+                <td>{{person.meal}}</td>
+                <td>{{person.song}}</td>
+                <td>{{person.message}}</td>
+              </tr>
+              {% endfor %}
+            </table>
             <h5>Registry Items</h5>
               <table id="registry-manager" class="table table-striped">
                 <tr>
