@@ -17,6 +17,7 @@
     "gm": "1.13.1",
     "async": "0.2.9",
     "zipper": "~0.3.0",
+    "stripe": "2.4.1",
     "paypal-rest-sdk": "~0.6.4"
   },
   "devDependencies": {

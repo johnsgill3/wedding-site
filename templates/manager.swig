@@ -11,7 +11,7 @@
 </head>
 <body>
   <div class="container">
-    <div class="hero-unit jumbotron text-center font-hidden"><h4>we're getting married, er...managed</h4>
+    <div class="hero-unit jumbotron text-center font-hidden"><h4>manager</h4>
       <div class="row-fluid text-center">
         <div class="span12">
           <div class="pull-right">
@@ -23,7 +23,7 @@
             <h5>RSVPs</h5>
             <table id="rsvp-manager" class="table table-striped">
               <tr>
-                <th>Name</th><th>Attending?</th><th>Meal</th><th>Song</th><th>Message</th>
+                <th>Name</th><th>Attending?</th><th>Meal</th><th>Song</th><th>Special Notes</th><th>Message</th>
               </tr>
               {% for person in rsvps %}
               <tr>
@@ -31,10 +31,12 @@
                 <td>{% if person.attending %}Yes{% else %}No{% endif %}</td>
                 <td>{{person.meal}}</td>
                 <td>{{person.song}}</td>
+                <td>{{person.notes}}</td>
                 <td>{{person.message}}</td>
               </tr>
               {% endfor %}
             </table>
+            {#
             <h5>Registry Items</h5>
               <table id="registry-manager" class="table table-striped">
                 <tr>
@@ -54,6 +56,7 @@
               <input class="btn" type="button" value="New" />
               <input class="btn" type="submit" value="Save" />
               <hr>
+              #}
               <h5>Photo Manager</h5>
               <table id="photo-manager" class="table table-striped">
                 <tr>

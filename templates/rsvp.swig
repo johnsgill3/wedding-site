@@ -88,6 +88,13 @@
               <input class="text-josefin-sans" name="songchoice" id="songchoice" aria-label="Tell us a song that will get you dancing" placeholder="Song Title - Artist Name">
             </div>
           </div>
+          <div class="control-group">
+            <label aria-hidden="true" for="notes"> Do you have any special requests/allergies?
+            </label>
+            <div class="controls">
+              <textarea class="text-josefin-sans ss-q-long" rows="8" cols="0" aria-label="Do you have any special requests/allergies?" name="notes" id="notes"></textarea>
+            </div>
+          </div>
         </div>
         <div id="nooption" class="hidden">
           <div class="control-group">

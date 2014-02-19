@@ -45,6 +45,7 @@ attending:Boolean,
 meal:String,
 song:String,
 message:String,
+notes:String,
 timestamp:{type:Date,default: Date.now}
 })
   , Rsvp = mongoose.model('Rsvp',rsvpSchema)

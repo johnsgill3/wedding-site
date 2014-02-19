@@ -15,6 +15,14 @@
       loadiv.style.display = 'block';
     }
     </script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-48068603-1', 'stephanieandgreg.us');
+      ga('send', 'pageview');
+    </script>
   </head>
   <body>
     <div id="loading" style="z-index:9999;opacity:0.95;width:100%;height:100%;position:absolute;top:0;left:0;background-color:#6FC7B9;display:none;"></div>
@@ -31,12 +39,6 @@
         <span class="muted{% if !thanksdiv or !errordiv %} hidden{% endif %}">in lieu of traditional wedding gifts, we ask that you help us celebrate by making a gift to our &quot;Honeyfund.&quot;</span>
         <div class="row-fluid text-center">
           <div class="span12">
-            <div class="row-fluid">
-              <div class="span6 offset3">
-                <div class="alert alert-success {{thanksdiv}}">{{thanks|raw}}</div>
-                <div class="alert alert-error {{errordiv}}">{{error|raw}}</div>
-              </div>
-            </div>
             <div class="row-fluid">
               <div class="span6 offset3">
                 <div class="row-fluid">
@@ -63,6 +65,30 @@
                     <hr>
                     <div class="row-fluid">
                       <div class="span12">
+
+                        {% if !test %}
+                        <div class="row-fluid">
+                          <div class="span12">
+                            <div id="thanks" style="padding-bottom:1em;" class="alert alert-success {{thanksdiv}}">{{thanks|raw}}</div>
+                            <div id="error" style="padding-bottom:1em;" class="alert alert-error {{errordiv}}">{{error|raw}}</div>
+                          </div>
+                        </div>
+                        <div class="input-prepend input-append">
+                          <span class="add-on">$</span>
+                          <input type="text" name="amount" id="amount" placeholder="100" size="4" style="width:4em;" />
+                          &nbsp;
+                          <button class="btn" type="button" id="paybutton">Make a gift online</button>
+                          <script>
+                            document.getElementById('paybutton').disabled = true;
+                          </script>
+                        </div>
+                        {% else %}
+                        <div class="row-fluid">
+                          <div class="span12">
+                            <div id="thanks" style="padding-bottom:1em;" class="alert alert-success {{thanksdiv}}">{{thanks|raw}}</div>
+                            <div id="error" style="padding-bottom:1em;" class="alert alert-error {{errordiv}}">{{error|raw}}</div>
+                          </div>
+                        </div>
                         <span class="muted">Make a gift online:</span><br>
                         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
                           <input type="hidden" name="cmd" value="_s-xclick">
@@ -71,6 +97,7 @@
                           <!-- input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!" -->
                           <img alt="" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
                         </form>
+                        {% endif %}
                       </div>
                     </div>
                   </div>

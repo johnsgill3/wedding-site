@@ -17,12 +17,16 @@ requirejs.config({
         gallery: 'blueimp-gallery/js/jquery.blueimp-gallery',
         raphael: '../js/raphael.min',
         mygallery: '../js/gallery',
-        coinbase: 'https://coinbase.com/assets/button'
+        coinbase: 'https://coinbase.com/assets/button',
+        stripe: 'https://checkout.stripe.com/checkout'
     },
     shim: {
         bootstrap: ['jquery'],
         //gallery: ['jquery','bootstrap'],
-        raphael: ['svg']
+        raphael: ['svg'],
+        stripe: {
+          exports:'StripeCheckout'
+        }
     },
     map: {
         'gallery': {
@@ -103,15 +107,89 @@ modules.rsvp = (function(){
   };
 }());
 
+modules.registry = (function(){
+  'use strict';
+  return {
+    init: function($,StripeCheckout){
+      var $am = $('#amount');
+      var $p = $('#paybutton');
+      $p.prop('disabled',false);
+      var $e = $('#error');
+      var handler = StripeCheckout.configure({
+        key:'pk_live_iTVGtXXgh2brN1TClnllC6kb',
+        token: function(token,args){
+          console.log('token: ',token,'args: ',args);
+          var amount = $am.val();
+          var strAmount = parseInt(amount,10);
+          amount = strAmount.toFixed(2);
+          amount = parseInt(amount.split('.').join(''),10);
+          $.ajax({
+            url:'/registry/pay',
+            data:{
+              token:token.id,
+              amount:amount
+            }
+          }).done(function(data){
+            if(data.success){
+              //put up the thanks div and show them the trx id
+              $('#thanks').html(data.trnId?'Thanks for sponsoring our honeymoon!<br>Your transaction ID is '+data.trnId:'Thanks for sponsoring our honeymoon!').removeClass('hidden');
+              console.log('success!');
+            }
+            console.log(data);
+          }).fail(function(err){
+            console.log(err);
+          });
+        }
+      });
+      $am.on('keyup',function(e){
+        try{
+          var amount = $am.val();
+          var strAmount = parseInt(amount,10);
+          amount = strAmount.toFixed(2);
+          amount = parseInt(amount.split('.').join(''),10);
+          if(amount){
+            $e.addClass('hidden');
+            $p.prop('disabled',false);
+          }
+        } catch(err){
+          $p.prop('disabled',true);
+        }
+      });
+      $p.on('click',function(e){
+        $e.addClass('hidden');
+        var amount = $am.val();
+        var strAmount = parseInt(amount,10);
+        amount = strAmount.toFixed(2);
+        amount = parseInt(amount.split('.').join(''),10);
+        if(amount){
+          var args = {
+            name:'stephanieandgreg.us',
+            description:'Contribute to our honeyfund!',
+            panelLabel: 'Make a gift of ',
+            amount:amount
+          };
+          console.log(args);
+          handler.open(args);
+        } else {
+          $e.html('<span class="alert alert-error">Please make sure to enter a valid amount!</span>');
+          $e.removeClass('hidden');
+        }
+        e.preventDefault();
+      });
+    }
+  };
+}());
+
 define([
     'jquery',
     'gallery',
     'mygallery',
+    'stripe',
     'raphael',
     'webfonts',
     'bootstrap',
     'coinbase'
-    ], function ($,gallery,mygallery) {
+    ], function ($,gallery,mygallery,StripeCheckout) {
     'use strict';
     //jQuery, canvas and the app/sub module are all
     //loaded and can be used here now.
@@ -142,5 +220,8 @@ define([
     });
     if($('#rsvpform').length){
       modules.rsvp.init($);
+    }
+    if($('#paybutton').length){
+      modules.registry.init($,StripeCheckout);
     }
 });

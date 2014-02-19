@@ -5,6 +5,8 @@ var config = require('../modules/config')
   , models = require('../models')
   , Registry = models.Registry
   , Transaction = models.Transaction
+  //, stripe = require('stripe')('sk_test_q2agRDKvmXmsZ5WLoZxcAz0O')
+  , stripe = require('stripe')('sk_live_7NfMPOvHBXf2AX4N5sSAjq94')
   , nodemailer = require('nodemailer')
   , smtpTransport = nodemailer.createTransport("SMTP",{
       service: "Gmail"
@@ -15,7 +17,15 @@ var config = require('../modules/config')
   })
   ;
 //mongoose.connect('mongodb://localhost/test');
-app.get('/registry',function(req,res){
+var redir = function(req,res,next){
+  if(!req.secure && /registry/.test(req.path)){
+    res.redirect('https://stephanieandgreg.us/registry');
+  } else {
+    next();
+  }
+};
+
+app.get('/registry',redir,function(req,res){
   console.log('reqest to registry');
   Registry.find(function(err,registryEntries){
     console.log('rendering registryEntries');
@@ -25,13 +35,47 @@ app.get('/registry',function(req,res){
       thanksdiv:'hidden',
       //thanks: req.session,
       addmsg:"Sponsor it!",
+      test:req.query.test==='true',
       items: registryEntries
     });
   });
 });
 
+app.get('/registry/pay',function(req,res){
+  console.log('paying via stripe!');
+  stripe.charges.create({
+    amount:req.query.amount,
+    card:req.query.token,
+    currency:'USD',
+    capture:true
+  },function(err,charge){
+    //async -- and charged if capture option is not false
+    console.log(charge);
+    if(err){
+      return res.json({error:err});
+    }
+    res.json({success:charge.captured&&charge.paid,trnId:charge.id,charge:charge});
+
+    //now email me about it!
+    var fullname = charge.card.name;
+    var total = (charge.amount/100).toFixed(2);
+    var mailtext = 'You received a payment of $'+total+' from '+fullname;
+    var mailOptions = {
+      from: 'mailer@stephanieandgreg.us',
+      to: 'stephanieandgreg.us@gmail.com',
+      subject: 'Payment from '+fullname,
+      text: mailtext
+    };
+    smtpTransport.sendMail(mailOptions,function(err,response){
+      if(err){
+        console.log(err);
+      }
+    });
+  });
+});
+
 app.all('/registry/thanks',function(req,res){
-  var trnId = req.body?req.body.txn_id:req.query?req.query.txn_id:'';
+  var trnId = req.body&&req.body.txn_id?req.body.txn_id:(req.query&&req.query.txn_id?req.query.txn_id:'');
   console.log('query: %s\nbody: %s',JSON.stringify(req.query),JSON.stringify(req.body));
   res.render('registry',{
     name:'stephanieandgreg.us - Registry',
