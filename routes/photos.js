@@ -6,11 +6,12 @@ var config = require('../modules/config')
   , Photo = models.Photo
   , path = require('path')
   , fs = require('fs')
+  , spdypush = require('../modules/spdypush')
   ;
 
 app.get('/photos',function(req,res){
     "use strict";
-    Photo.find({category:'engagement',shown:true}).lean().sort({order:1}).exec(function(err,photos){
+    Photo.find({category:{$in:['engagement','wedding']},shown:true}).lean().sort({order:1}).exec(function(err,photos){
       res.render('photos',{
           name:'stephanieandgreg.us - Photos',
           photos: photos,
@@ -42,13 +43,13 @@ app.get('/photos/all',function(req,res){
       console.log('zipping %s', path.basename(photo.lrgloc));
       return function(cb){
         zipfile.addFile(photo.lrgloc,path.basename(photo.lrgloc),function(err){
-          var res = {success:'success'};
+          var resp = {success:'success'};
           if(err){
             console.log(err);
-            res = null;
+            resp = null;
           }
           console.log('done zipping %s', path.basename(photo.lrgloc));
-          cb(err,res);
+          cb(err,resp);
         });
       };
     };

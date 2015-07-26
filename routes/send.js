@@ -5,8 +5,8 @@ var config = require('../modules/config')
   , smtpTransport = nodemailer.createTransport("SMTP",{
       service: "Gmail"
     , auth: {
-          user: "stephanieandgreg.us@gmail.com"
-        , pass: "this is a long mail password"
+          user: process.env.MAIL_USER
+        , pass: process.env.MAIL_PASS
     }
   })
   ;
@@ -38,7 +38,7 @@ app.all('/send', function(req,res){
         });
         var mailOptions = {
             from: "mailer@stephaneandgreg.us",
-            to: "stephanieandgreg.us@gmail.com",
+            to: process.env.MAIL_USER,
             subject: "Love Note from "+req.body.name,
             text: mailtext
         };

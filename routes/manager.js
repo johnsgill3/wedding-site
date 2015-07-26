@@ -6,10 +6,13 @@ var config = require('../modules/config')
   , models = require('../models')
   , Registry = models.Registry
   , Photo = models.Photo
+  , stripeTest = require('stripe')(process.env.STRIPE_TEST_SECRET)
+  , stripeLive = require('stripe')(process.env.STRIPE_LIVE_SECRET)
   , Rsvp = models.Rsvp
   , _ = require('lodash')
   , path = require('path')
-  , fs = require('fs');
+  , fs = require('fs')
+  ;
 
 var redir = function(req,res,next){
   'use strict';
@@ -27,6 +30,32 @@ var basicAuth = express.basicAuth(function(user,pass){
   default: return false;
   }
 });
+
+app.get('/manager/pay',redir,basicAuth,function(req,res){
+  'use strict';
+  var chargeCb = function(err,charge){
+    console.log(charge);
+    if(err){
+      return res.json({error:err});
+    }
+    res.json({success:charge.captured&&charge.paid,trnId:charge.id,charge:charge});
+  };
+  var params = {
+    amount:req.query.amount,
+    card:req.query.token,
+    currency:'USD',
+    capture:true
+  };
+  console.log('params: %s',req.params);
+  if(req.query.test==='true'){
+    console.log('paying via stripe in test mode!');
+    stripeTest.charges.create(params,chargeCb);
+  } else {
+    console.log('paying via stripe in live mode!');
+    stripeLive.charges.create(params,chargeCb);
+  }
+});
+
 app.get('/manager/rsvps',redir,basicAuth,function(req,res){
   'use strict';
   Rsvp.find().lean().sort('timestamp').exec(function(err,rsvps){
@@ -34,16 +63,18 @@ app.get('/manager/rsvps',redir,basicAuth,function(req,res){
     for(i=0;i<ii;i++){
       line = '';
       for(index in rsvps[i]){
-        if(index !== '__v' && index !== '_id'){
-          if(line !== '') {line += ',';}
-          if(i===0){
-            if(str !== ''){ str+= ',';}
-            str += index;
-          }
-          if(rsvps[i][index]){
-            line += rsvps[i][index];
-          } else {
-            line += '""';
+        if(rsvps[i].hasOwnProperty(index)){
+          if(index !== '__v' && index !== '_id'){
+            if(line !== '') {line += ',';}
+            if(i===0){
+              if(str !== ''){ str+= ',';}
+              str += index;
+            }
+            if(rsvps[i][index]){
+              line += rsvps[i][index];
+            } else {
+              line += '""';
+            }
           }
         }
       }
@@ -113,8 +144,8 @@ app.post('/manager/upload',redir,basicAuth,function(req,res){
     console.log(req.files);
     console.log(req.query);
     console.log(req.body);
-    var img = req.body.fileUpload
-      , files = req.files
+    //var img = req.body.fileUpload
+    var files = req.files
       , serverPath = config.UPLOAD_DIR + files.fileUpload.name
       , publicPath = config.PUBLIC_UPLOAD_DIR + files.fileUpload.name
       , docId = req.body.id;
@@ -169,8 +200,10 @@ app.post('/manager/upload',redir,basicAuth,function(req,res){
 
 app.put('/manager/:id',redir,basicAuth,function(req,res){
     "use strict";
+    /*
     var id = req.params.id
       , newdata = req.body.newdata;
+    */
     res.json({query:req.query,body:req.body,params:req.params});
 });
 

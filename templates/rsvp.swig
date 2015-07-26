@@ -92,7 +92,7 @@
             <label aria-hidden="true" for="notes"> Do you have any special requests/allergies?
             </label>
             <div class="controls">
-              <textarea class="text-josefin-sans ss-q-long" rows="8" cols="0" aria-label="Do you have any special requests/allergies?" name="notes" id="notes"></textarea>
+              <textarea class="text-josefin-sans ss-q-long" rows="8" cols="50" aria-label="Do you have any special requests/allergies?" name="notes" id="notes"></textarea>
             </div>
           </div>
         </div>
@@ -101,7 +101,7 @@
             <label aria-hidden="true" for="wellwishes"> Do you have any well wishes for the happy couple?
             </label>
             <div class="controls">
-              <textarea class="text-josefin-sans ss-q-long" rows="8" cols="0" aria-label="Do you have any well wishes for the happy couple?" name="wellwishes" id="wellwishes"></textarea>
+              <textarea class="text-josefin-sans ss-q-long" rows="8" cols="50" aria-label="Do you have any well wishes for the happy couple?" name="wellwishes" id="wellwishes"></textarea>
             </div>
           </div>
         </div>

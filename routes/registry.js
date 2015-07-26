@@ -5,19 +5,20 @@ var config = require('../modules/config')
   , models = require('../models')
   , Registry = models.Registry
   , Transaction = models.Transaction
-  //, stripe = require('stripe')('sk_test_q2agRDKvmXmsZ5WLoZxcAz0O')
-  , stripe = require('stripe')('sk_live_7NfMPOvHBXf2AX4N5sSAjq94')
+  //, stripe = require('stripe')(process.env.STRIPE_TEST_SECRET)
+  , stripe = require('stripe')(process.env.STRIPE_LIVE_SECRET)
   , nodemailer = require('nodemailer')
   , smtpTransport = nodemailer.createTransport("SMTP",{
       service: "Gmail"
     , auth: {
-          user: 'stephanieandgreg.us@gmail.com'
-        , pass: 'this is a long mail password'
+          user: process.env.MAIL_USER
+        , pass: process.env.MAIL_PASS
     }
   })
   ;
 //mongoose.connect('mongodb://localhost/test');
 var redir = function(req,res,next){
+  return next();
   if(!req.secure && /registry/.test(req.path)){
     res.redirect('https://stephanieandgreg.us/registry');
   } else {
@@ -62,7 +63,7 @@ app.get('/registry/pay',function(req,res){
     var mailtext = 'You received a payment of $'+total+' from '+fullname;
     var mailOptions = {
       from: 'mailer@stephanieandgreg.us',
-      to: 'stephanieandgreg.us@gmail.com',
+      to: process.env.MAIL_USER,
       subject: 'Payment from '+fullname,
       text: mailtext
     };
@@ -113,7 +114,7 @@ app.all('/yougotpaid/with/:method/as/:type',function(req,res){
     var mailtext = 'You received a payment of $'+total+' from '+fullname;
     var mailOptions = {
       from: 'mailer@stephanieandgreg.us',
-      to: 'stephanieandgreg.us@gmail.com',
+      to: process.env.MAIL_USER,
       subject: 'Payment from '+fullname,
       text: mailtext
     };

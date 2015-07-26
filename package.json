@@ -2,23 +2,26 @@
   "name": "stephanieandgreg.us",
   "version": "0.0.1",
   "dependencies": {
-    "express": "3.1.0",
-    "spdy": "1.19.1",
-    "connect": "2.7.9",
-    "swig": "0.13.5",
-    "consolidate": "0.8.0",
-    "lodash": "1.3.1",
-    "require-dir": "0.1.0",
-    "mongoose": "3.6.11",
-    "socket.io": "0.9.14",
-    "nodemailer": "0.4.2",
-    "connect-mongodb": "1.1.5",
-    "mongodb": "1.3.4",
-    "gm": "1.13.1",
     "async": "0.2.9",
-    "zipper": "~0.3.0",
-    "stripe": "2.4.1",
-    "paypal-rest-sdk": "~0.6.4"
+    "aws-sdk": "~2.0.0",
+    "connect": "2.7.9",
+    "connect-mongodb": "1.1.5",
+    "consolidate": "0.8.0",
+    "express": "3.x",
+    "gm": "1.13.1",
+    "instagram-node": "*",
+    "lodash": "1.3.1",
+    "mongodb": "1.3.4",
+    "mongoose": "3.6.11",
+    "nodemailer": "0.4.2",
+    "paypal-rest-sdk": "~0.6.4",
+    "pmx": "^0.3.4",
+    "require-dir": "0.1.0",
+    "socket.io": "0.9.14",
+    "spdy": "1.19.*",
+    "stripe": "*",
+    "swig": "0.13.5",
+    "zipper": "~0.3.0"
   },
   "devDependencies": {
     "mocha": "1.9.0",
@@ -26,6 +29,7 @@
     "should": "1.2.2"
   },
   "scripts": {
-    "test": "./node_modules/.bin/mocha"
+    "test": "./node_modules/.bin/mocha",
+    "start": "sudo forever start -l /var/log/stephforever.log -o /var/log/stephout.log -e /var/log/stepherr.log -a app.js"
   }
 }

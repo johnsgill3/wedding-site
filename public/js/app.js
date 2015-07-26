@@ -1,4 +1,5 @@
 /*jslint browser:true,devel:true*/
+/*global requirejs:false,ga:false,define:false*/
 requirejs.config({
     //By default load any module IDs from js/lib
     baseUrl: '/components',
@@ -12,21 +13,19 @@ requirejs.config({
         jquery: 'jquery/jquery.min',
         bootstrap: '../js/bootstrap',
         webfonts: '../js/webfonts',
-        svg: '../js/svg.min',
         'gallery-min': 'blueimp-gallery/js/jquery.blueimp-gallery.min',
         gallery: 'blueimp-gallery/js/jquery.blueimp-gallery',
-        raphael: '../js/raphael.min',
         mygallery: '../js/gallery',
         coinbase: 'https://coinbase.com/assets/button',
+        froogaloop: 'https://f.vimeocdn.com/js/froogaloop2.min',
         stripe: 'https://checkout.stripe.com/checkout'
     },
     shim: {
         bootstrap: ['jquery'],
-        //gallery: ['jquery','bootstrap'],
-        raphael: ['svg'],
         stripe: {
           exports:'StripeCheckout'
-        }
+        },
+        froogaloop: ['jquery']
     },
     map: {
         'gallery': {
@@ -36,7 +35,8 @@ requirejs.config({
         'gallery-min': {
           'blueimp-helper':'blueimp-gallery/js/blueimp-helper'
         }
-    }
+    },
+    waitSeconds: 0
 });
 
 var modules = {};
@@ -111,6 +111,7 @@ modules.registry = (function(){
   'use strict';
   return {
     init: function($,StripeCheckout){
+      ga('require', 'ecommerce', 'ecommerce.js');
       var $am = $('#amount');
       var $p = $('#paybutton');
       $p.prop('disabled',false);
@@ -118,11 +119,12 @@ modules.registry = (function(){
       var handler = StripeCheckout.configure({
         key:'pk_live_iTVGtXXgh2brN1TClnllC6kb',
         token: function(token,args){
-          console.log('token: ',token,'args: ',args);
           var amount = $am.val();
-          var strAmount = parseInt(amount,10);
+          var strAmount = parseFloat(amount);
           amount = strAmount.toFixed(2);
           amount = parseInt(amount.split('.').join(''),10);
+          //ga('send','event','Payments','Auth');
+          ga('ecommerce:addTransaction',{'id':token,'revenue':amount/100});
           $.ajax({
             url:'/registry/pay',
             data:{
@@ -131,6 +133,8 @@ modules.registry = (function(){
             }
           }).done(function(data){
             if(data.success){
+            ga('send','event','Payments','Captured',(data.charge.amount/100).toFixed(2));
+            ga('ecommerce:send');
               //put up the thanks div and show them the trx id
               $('#thanks').html(data.trnId?'Thanks for sponsoring our honeymoon!<br>Your transaction ID is '+data.trnId:'Thanks for sponsoring our honeymoon!').removeClass('hidden');
               console.log('success!');
@@ -139,12 +143,18 @@ modules.registry = (function(){
           }).fail(function(err){
             console.log(err);
           });
+        },
+        opened: function(){
+          ga('send','event','Payments','Open',(this.amount/100).toFixed(2));
+        },
+        closed: function(){
+          ga('send','event','Payments','Closed',(this.amount/100).toFixed(2));
         }
       });
       $am.on('keyup',function(e){
         try{
           var amount = $am.val();
-          var strAmount = parseInt(amount,10);
+          var strAmount = parseFloat(amount);
           amount = strAmount.toFixed(2);
           amount = parseInt(amount.split('.').join(''),10);
           if(amount){
@@ -158,7 +168,7 @@ modules.registry = (function(){
       $p.on('click',function(e){
         $e.addClass('hidden');
         var amount = $am.val();
-        var strAmount = parseInt(amount,10);
+        var strAmount = parseFloat(amount);
         amount = strAmount.toFixed(2);
         amount = parseInt(amount.split('.').join(''),10);
         if(amount){
@@ -168,7 +178,6 @@ modules.registry = (function(){
             panelLabel: 'Make a gift of ',
             amount:amount
           };
-          console.log(args);
           handler.open(args);
         } else {
           $e.html('<span class="alert alert-error">Please make sure to enter a valid amount!</span>');
@@ -180,12 +189,32 @@ modules.registry = (function(){
   };
 }());
 
-define([
+modules.video = (function(){
+  'use strict';
+  return {
+    init: function($,$f){
+      var iframe = $('#player')[0];
+      var player = $f(iframe);
+      
+      player.addEvent('ready',function(){
+        ga('send','event','Video','Ready');
+        player.addEvent('play', ga.bind(null,'send','event','Video','Play'));
+        player.addEvent('pause', ga.bind(null,'send','event','Video','Pause'));
+        player.addEvent('finish', ga.bind(null,'send','event','Video','Finish'));
+        player.addEvent('seek', function(obj){
+          ga('send','event','Video','Seek',(obj.percent*100)+'%');
+        });
+      });
+    }
+  };
+}());
+
+define('app',[
     'jquery',
     'gallery',
     'mygallery',
     'stripe',
-    'raphael',
+    'froogaloop',
     'webfonts',
     'bootstrap',
     'coinbase'
@@ -223,5 +252,11 @@ define([
     }
     if($('#paybutton').length){
       modules.registry.init($,StripeCheckout);
+    }
+    if($('iframe').length){
+      /*global Froogaloop:false*/
+      require(['froogaloop'],function(){
+        modules.video.init($,Froogaloop);
+      });
     }
 });

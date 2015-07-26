@@ -19,6 +19,22 @@
           </div>
         </div>
         <div class="span12">
+          <div class="row-fluid">
+            <div class="span8 offset2">
+              <h5>Manual Capture</h5>
+              <div class="input-prepend input-append">
+                <span class="add-on">$</span>
+                <input type="text" name="amount" id="amount" placeholder="100" size="4" style="width:4em;" />
+                &nbsp;
+                <button class="btn" type="button" id="paybutton">Capture</button>
+                <label><input type="checkbox" id="test" /> Test Mode</label>
+                <script>
+                  document.getElementById('paybutton').disabled = true;
+                </script>
+                <div id="success" class="alert alert-success alert-block hidden"></div>
+              </div>
+            </div>
+          </div>
           <form class="form-horizontal" id="manage" action="/manager" method="post">
             <h5>RSVPs</h5>
             <table id="rsvp-manager" class="table table-striped">

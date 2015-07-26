@@ -1,6 +1,6 @@
 'use strict';
 /*global define:false*/
-define([
+define('mygallery',[
 'jquery',
 'gallery'
 ], function($,gallery){

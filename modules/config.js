@@ -11,10 +11,11 @@ var express = require('express')
   , fs = require('fs')
   , mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/test');
+app.enable('trust proxy');
 app.use(express.compress());
 app.use(function(req,res,next){
     'use strict';
-    if(req.subdomains && req.subdomains.length !== 0){
+    if(req.subdomains && req.subdomains.length !== 0 && req.subdomains[0] !== 'dev'){
       console.log('redirecting from '+req.host+' to '+req.protocol+'://stephanieandgreg.us');
       res.redirect(301,req.protocol+'://stephanieandgreg.us');
       res.end();
@@ -39,7 +40,7 @@ try{
   /*jslint stupid:true*/
   EXPRESS_KEY = fs.readFileSync(__dirname+'/../certs/prv.key');
   EXPRESS_CERT = fs.readFileSync(__dirname+'/../certs/cert.pem');
-  EXPRESS_CA = [fs.readFileSync(__dirname+'/../certs/ca.pem')];
+  EXPRESS_CA = [];
   EXPRESS_CA.push(fs.readFileSync(__dirname+'/../certs/int.pem'));
   /*jslint stupid:false*/
 } catch(err){
@@ -59,8 +60,8 @@ app.use(connect.static(path.join(__dirname,'..','public'), { maxAge: /*86400000*
 
 
 module.exports = { //ALL_CAPS represent static values, lowercase_stuff are dynamically required resources
-  EXPRESS_PORT: 80,
-  EXPRESSL_PORT: 443,
+  EXPRESS_PORT: 8080,
+  EXPRESSL_PORT: 8443,
   EXPRESS_BAK_PORT: 8080,
   EXPRESSL_BAK_PORT: 8443,
   EXPRESS_KEY: EXPRESS_KEY,

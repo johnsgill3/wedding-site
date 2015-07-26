@@ -19,6 +19,7 @@
     <div style="display:inline-block"><i class="icon-chevron-right icon-1"></i></div>
     <!-- div class="carousel-caption"><h4>{{ img.title }}</h4>{{ img.subtitle }}</div -->
   </div> #}
+  More coming soon...<br>
   <div id="links">
     {% for img in photos %}<a href="{{ img.lrgsrc }}" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="{{ img.thmbsrc }}"></a>
     {% endfor %}
