@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+ 
+<title>StephanieAndGreg.us</title>
+ 
+<link rel="stylesheet" href="css/bootstrap-responsive.css">
+<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+<link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="components/blueimp-gallery/css/blueimp-gallery.min.css">
+<script type="text/javascript">
+    /*
+    function showLoader(){
+      var loadiv = document.getElementById('loading');
+      loadiv.style.opacity = '0.95';
+      loadiv.style.display = 'block';
+    }
+    */
+  </script>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-48068603-1', 'stephanieandgreg.us');
+    ga('send', 'pageview');
+  </script>
+</head>
+<body>
+<div id="loading" style="z-index:9999;opacity:0.95;width:100%;height:100%;position:absolute;top:0;left:0;background-color:#9AD4C1;display:none;"></div>
+<script type="text/javascript">
+    //showLoader();
+  </script>
+<div class="container">
+<div class="masthead">
+ 
+</div>
+<div itemscope itemtype="http://schema.org/Event" class="hero-unit jumbotron text-center font-hidden"><a href="index.html"><h1 itemprop="description">we got married</h1></a>
+<h2 itemprop="name">Stephanie &amp; Greg</h2><img alt="dots" src="images/dots.png"><br>
+ 
+<div class="row-fluid text-center">
+<div class="span2">
+<img alt="RSVP" src="images/save-the-date.png"><br>&nbsp;<br><br>
+<a class="muted" href="registry"><img alt="Make a Gift" src="images/gift-reg.png"><br>Make a Gift</a>
+</div>
+<div class="span8">
+More coming soon...<br>
+<div id="links">
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/1.png" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/1-thmb.png"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/5.png" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/5-thmb.png"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/6.png" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/6-thmb.png"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/7.png" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/7-thmb.png"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/8.png" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/8-thmb.png"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/12.png" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/12-thmb.png"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/29.png" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/29-thmb.png"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/31.png" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/31-thmb.png"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/84.JPG" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/84-thmb.JPG"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/85.JPG" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/85-thmb.JPG"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/86.JPG" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/86-thmb.JPG"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/87.JPG" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/87-thmb.JPG"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/88.JPG" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/88-thmb.JPG"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/90.JPG" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/90-thmb.JPG"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/91.JPG" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/91-thmb.JPG"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/92.JPG" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/92-thmb.JPG"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/95.JPG" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/95-thmb.JPG"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/96.JPG" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/96-thmb.JPG"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/97.JPG" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/97-thmb.JPG"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/98.JPG" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/98-thmb.JPG"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/99.JPG" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/99-thmb.JPG"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/100.JPG" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/100-thmb.JPG"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/101.JPG" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/101-thmb.JPG"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/102.JPG" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/102-thmb.JPG"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/103.JPG" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/103-thmb.JPG"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/104.JPG" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/104-thmb.JPG"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/105.JPG" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/105-thmb.JPG"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/111.JPG" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/111-thmb.JPG"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/112.JPG" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/112-thmb.JPG"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/113.JPG" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/113-thmb.JPG"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/119.JPG" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/119-thmb.JPG"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/123.JPG" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/123-thmb.JPG"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/126.JPG" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/126-thmb.JPG"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/128.JPG" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/128-thmb.JPG"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/131.JPG" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/131-thmb.JPG"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/155.JPG" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/155-thmb.JPG"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/157.JPG" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/157-thmb.JPG"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/177.JPG" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/177-thmb.JPG"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/179.JPG" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/179-thmb.JPG"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/180.JPG" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/180-thmb.JPG"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/181.JPG" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/181-thmb.JPG"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/182.JPG" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/182-thmb.JPG"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4273-2-lrg.jpg" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4273-2-thmb.jpg"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4276-2-lrg.jpg" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4276-2-thmb.jpg"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4276-3-lrg.jpg" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4276-3-thmb.jpg"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4279-2-lrg.jpg" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4279-2-thmb.jpg"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4279-3-lrg.jpg" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4279-3-thmb.jpg"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4281-2-lrg.jpg" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4281-2-thmb.jpg"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4284-2-lrg.jpg" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4284-2-thmb.jpg"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4287-2-lrg.jpg" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4287-2-thmb.jpg"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4290-2-lrg.jpg" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4290-2-thmb.jpg"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4298-2-lrg.jpg" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4298-2-thmb.jpg"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4302-2-lrg.jpg" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4302-2-thmb.jpg"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4305-2-lrg.jpg" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4305-2-thmb.jpg"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4305-3-lrg.jpg" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4305-3-thmb.jpg"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4315-2-lrg.jpg" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4315-2-thmb.jpg"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4340-2-lrg.jpg" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4340-2-thmb.jpg"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4342-2-lrg.jpg" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4342-2-thmb.jpg"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4351-2-lrg.jpg" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4351-2-thmb.jpg"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4351-3-lrg.jpg" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4351-3-thmb.jpg"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4357-2-lrg.jpg" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4357-2-thmb.jpg"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4358-2-lrg.jpg" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4358-2-thmb.jpg"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4360-2-lrg.jpg" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4360-2-thmb.jpg"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4362-2-lrg.jpg" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4362-2-thmb.jpg"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4375-2-lrg.jpg" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4375-2-thmb.jpg"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4382-2-lrg.jpg" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4382-2-thmb.jpg"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4400-2-lrg.jpg" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4400-2-thmb.jpg"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4408-2-lrg.jpg" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4408-2-thmb.jpg"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4416-2-lrg.jpg" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4416-2-thmb.jpg"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4419-2-lrg.jpg" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4419-2-thmb.jpg"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4429-2-lrg.jpg" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4429-2-thmb.jpg"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4435-2-lrg.jpg" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4435-2-thmb.jpg"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4435-3-lrg.jpg" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4435-3-thmb.jpg"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4438-2-lrg.jpg" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4438-2-thmb.jpg"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4442-2-lrg.jpg" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4442-2-thmb.jpg"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4444-2-lrg.jpg" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4444-2-thmb.jpg"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4452-2-lrg.jpg" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4452-2-thmb.jpg"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4452-3-lrg.jpg" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4452-3-thmb.jpg"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4453-2-lrg.jpg" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4453-2-thmb.jpg"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4467-2-lrg.jpg" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4467-2-thmb.jpg"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4477-2-lrg.jpg" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4477-2-thmb.jpg"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4479-2-lrg.jpg" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4479-2-thmb.jpg"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4479-3-lrg.jpg" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4479-3-thmb.jpg"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4481-2-lrg.jpg" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4481-2-thmb.jpg"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4481-3-lrg.jpg" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4481-3-thmb.jpg"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4492-2-lrg.jpg" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4492-2-thmb.jpg"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4493-2-lrg.jpg" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4493-2-thmb.jpg"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4495-2-lrg.jpg" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4495-2-thmb.jpg"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4516-2-lrg.jpg" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4516-2-thmb.jpg"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4517-2-lrg.jpg" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4517-2-thmb.jpg"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4525-2-lrg.jpg" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4525-2-thmb.jpg"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4537-2-lrg.jpg" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4537-2-thmb.jpg"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4537-3-lrg.jpg" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4537-3-thmb.jpg"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4541-2-lrg.jpg" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4541-2-thmb.jpg"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4541-3-lrg.jpg" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4541-3-thmb.jpg"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4546-2-lrg.jpg" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4546-2-thmb.jpg"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4546-3-lrg.jpg" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4546-3-thmb.jpg"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4551-2-lrg.jpg" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4551-2-thmb.jpg"></a>
+<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4559-2-lrg.jpg" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/DSC_4559-2-thmb.jpg"></a>
+</div>
+<br><br>
+<img alt="Footer" src="images/footer-image.png">
+</div>
+<div class="span2">
+<a class="muted" href="photos"><img alt="Photos" src="images/photos.png"><br>Photos</a><br><br>
+<a class="muted" href="contact"><img alt="Contact Us" src="images/letters.png"><br>Drop us a love note</a>
+</div>
+</div>
+<br><br>
+<div class="muted text-center">A Future Mr. &amp; Mrs. Cochard Creation &copy; 2013 all rights reserved</div>
+</div>
+</div>
+<div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls" data-continuous="true" data-toggle-controls-on-return="true" data-toggle-slideshow-on-space="true" data-enable-keyboard-navigation="true" data-close-on-escape="true" data-close-on-slide-click="true">
+<div class="slides"></div>
+<h3 class="title"></h3>
+<a class="prev">‹</a>
+<a class="next">›</a>
+<a class="close">×</a>
+<a class="play-pause"></a>
+<ol class="indicator"></ol>
+</div>
+<div class="pull-right">
+ 
+<div class="coinbase-button" data-code="132021c44bfebd77e2c12592ea9632e5" data-button-style="none" data-custom="donate_btn_1"></div>
+</div>
+<script data-main="/js/app.js" src="components/requirejs/require.js"></script>
+</body>
+</html>

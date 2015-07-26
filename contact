@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
  
-<title>Home - StephanieAndGreg.us</title>
+<title>StephanieAndGreg.us</title>
  
  
 <link rel="stylesheet" href="css/bootstrap-responsive.css">
@@ -48,7 +48,33 @@
 </div>
 <div class="span8">
  
-<iframe src="http://player.vimeo.com/video/106696611?api=1&amp;player_id=player" width="691" height="460" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen id="player"></iframe>
+<form class="form-horizontal" action="http://stephanieandgreg.us/send" method="post">
+<div class="control-group">
+<label class="control-label" for="inputName">Name:</label>
+<div class="controls">
+<input type="text" name="name" id="inputName" placeholder="Name"/>
+</div>
+</div>
+<div class="control-group">
+<label class="control-label" for="inputEmail">E-mail:</label>
+<div class="controls">
+<input type="text" name="email" id="inputEmail" placeholder="Email"/>
+</div>
+</div>
+<div class="control-group">
+<label class="control-label" for="inputNote">Note:</label>
+<div class="controls">
+<textarea name="note" id="inputNote" rows="6"></textarea>
+</div>
+</div>
+<div class="control-group">
+<div class="controls">
+<input class="btn" type="submit" value="Send"/>
+</div>
+</div>
+</form>
+<div class="alert alert-success hidden"></div>
+<div class="alert alert-error hidden"></div>
 <br><br>
 <img alt="Footer" src="images/footer-image.png">
 </div>
