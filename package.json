@@ -1,5 +1,6 @@
 {
-  "name": "stephanieandgreg.us",
+<<<<<<< HEAD
+  "name": "wedding-site",
   "version": "0.0.1",
   "dependencies": {
     "async": "0.2.9",
@@ -26,10 +27,13 @@
   "devDependencies": {
     "mocha": "1.9.0",
     "zombie": "2.0.0-alpha19",
-    "should": "1.2.2"
+    "should": "1.2.2",
+    "bower": "~1.2.8"
   },
   "scripts": {
     "test": "./node_modules/.bin/mocha",
-    "start": "sudo forever start -l /var/log/stephforever.log -o /var/log/stephout.log -e /var/log/stepherr.log -a app.js"
+    "start": "sudo forever start -l /var/log/stephforever.log -o /var/log/stephout.log -e /var/log/stepherr.log -a app.js",
+    "test": "./node_modules/.bin/mocha",
+    "bower": "./node_modules/.bin/bower install"
   }
 }

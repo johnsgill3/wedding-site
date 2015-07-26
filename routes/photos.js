@@ -13,7 +13,7 @@ app.get('/photos',function(req,res){
     "use strict";
     Photo.find({category:{$in:['engagement','wedding']},shown:true}).lean().sort({order:1}).exec(function(err,photos){
       res.render('photos',{
-          name:'stephanieandgreg.us - Photos',
+          name:config.NAME+' - Photos',
           photos: photos,
           errordiv:err?'':'hidden',
           error:err,

@@ -12,7 +12,7 @@ var config = require('../modules/config')
   ;
 
 app.get('/contact',function(req,res){
-  res.render('contact',{name:'stephanieandgreg.us - Contact',thanksdiv:'hidden',errordiv:'hidden'});
+  res.render('contact',{name:config.NAME+' - Contact',thanksdiv:'hidden',errordiv:'hidden'});
 });
 
 app.all('/send', function(req,res){
@@ -55,8 +55,8 @@ app.all('/send', function(req,res){
 
 app.get('/thanks',function(req,res){
     if(req.query.error){
-        res.render('contact',{name:'stephanieandgreg.us - Contact',thanksdiv:'hidden',error:req.query.error});
+        res.render('contact',{name:config.NAME+' - Contact',thanksdiv:'hidden',error:req.query.error});
     }else{
-      res.render('contact',{name:'stephanieandgreg.us - Contact',errordiv:'hidden',thanks:"Thank you for your message!"});
+      res.render('contact',{name:config.NAME+' - Contact',errordiv:'hidden',thanks:"Thank you for your message!"});
     }
 });

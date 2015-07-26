@@ -16,7 +16,7 @@ var config = require('../modules/config')
 app.get('/rsvp',function(req,res){
     'use strict';
     res.render('rsvp',{
-        name:'stephanieandgreg.us - RSVP',
+        name:config.NAME+' - RSVP',
         errordiv:'hidden',
         thanksdiv:'hidden'
     });
