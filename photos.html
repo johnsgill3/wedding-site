@@ -48,10 +48,10 @@
 <img alt="RSVP" src="images/save-the-date.png"><br>&nbsp;<br><br>
 <a class="muted" href="registry"><img alt="Make a Gift" src="images/gift-reg.png"><br>Make a Gift</a>
 </div>
-<div class="span8">
-<div id="links">
+<div class="span6">
+<div id="links" class="row-fluid">
 {% for img in site.data.images %} 
-<a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/finished/edited/{{ img.src }}-small.jpg" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/finished/edited/{{ img.src }}-thmb.jpg"></a>{% cycle '', '', '', '', '', '<br>' %}
+<a class="span1" href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/finished/edited/{{ img.src }}-small.jpg" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/finished/edited/{{ img.src }}-thmb.jpg"></a>{% cycle '', '', '', '', '', '<br>' %}
 {% endfor %}
 <a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/1.png" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/1-thmb.png"></a>
 <a href="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/5.png" data-gallery="#blueimp-gallery"><img alt="Engagement Photo Thumbnail" src="http://stephanieandgreg-us.s3-us-west-2.amazonaws.com/wedding/5-thmb.png"></a>
