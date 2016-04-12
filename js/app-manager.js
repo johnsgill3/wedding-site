@@ -112,7 +112,7 @@ modules.registry = (function(){
         amount = parseInt(amount.split('.').join(''),10);
         if(amount){
           var args = {
-            name:'stephanieandgreg.us',
+            name:'stinegillwedding.us',
             description:'Manual capture!',
             amount:amount
           };

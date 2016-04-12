@@ -173,7 +173,7 @@ modules.registry = (function(){
         amount = parseInt(amount.split('.').join(''),10);
         if(amount){
           var args = {
-            name:'stephanieandgreg.us',
+            name:'stinegillwedding.us',
             description:'Contribute to our honeyfund!',
             panelLabel: 'Make a gift of ',
             amount:amount
