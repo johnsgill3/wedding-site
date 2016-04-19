@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include head.html %}
+
+<body id="header" class="text-center">
+    <div class="jumbotrom">
+        <div class="container">
+            {% include header.html %}
+        </div>
+    </div>
+    <div id="body" class="container">
+        <div class="row">
+            <div class="col-md-2">
+                <a class="muted" href="rsvp"><img alt="Make a Gift" src="images/save-the-date.png"><br>RSVP</a>
+                <a class="muted" href="registry"><img alt="Make a Gift" src="images/gift-reg.png"><br>Make a Gift</a>
+            </div>
+            <div class="col-md-8">{{ content }}</div>
+            <div class="col-md-2">
+                <a class="muted" href="photos"><img alt="Photos" src="images/photos.png">Photos</a>
+                <a class="muted" href="contact"><img alt="Contact Us" src="images/letters.png">Drop us a love note</a>
+            </div>
+        </div>
+    </div>
+    <div id="footer" class="container">
+        {% include footer.html %}
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</body>
+
+</html>
