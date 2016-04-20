@@ -1,18 +1,16 @@
 body {
-    color: #ED8474;
-    background-color: #9AD4C1;
-    font-family: 'Josefin Sans', sans-serif;
-}
-h1, h2 {
-    color: #ED8474;
-    font-family: 'Fjord One', serif;
-    font-weight: normal;
+    color: #F05B84;
+    background-color: #0C587A;
+    font-family: 'Arial Black', sans-serif;
+    font-weight: bold;
 }
 h1#title {
-    background: url('../images/header.png') no-repeat top center;
-    color: white;
-    line-height: 320px;
-    margin-bottom: -100px;
+    background: url('../images/header2.png') no-repeat top center;
+    color: #FFF200;
+    line-height: 220px;
+    font-family: 'Gill Sans', sans-serif;
+    font-size: 58px;
+    margin-bottom: -60px;
 }
 .container {
     background-color: white;
@@ -27,4 +25,29 @@ hr.dots {
 }
 #footer {
     padding-bottom: 50px;
+}
+a:hover {
+    text-decoration: none;
+    color: #F05B84;
+}
+a {
+    color: #F05B84;
+}
+.item {
+    padding: 8px 0px;
+}
+.pink {
+    color: #F05B84;
+}
+.gold {
+    color: #D1AB1F;
+}
+.deepred {
+    color: #52000C;
+}
+.blue {
+    color: #0C587A;
+}
+.lightblue{
+    color: #45B4BD;
 }
