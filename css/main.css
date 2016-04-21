@@ -1,16 +1,15 @@
 body {
-    color: #F05B84;
-    background-color: #0C587A;
-    font-family: 'Arial Black', sans-serif;
+    font-family: 'Lora', serif;
     font-weight: bold;
+    background-color: rgb(204, 235, 197);
+    color: rgb(255, 191, 102);
 }
 h1#title {
-    background: url('../images/header2.png') no-repeat top center;
-    color: #FFF200;
-    line-height: 220px;
-    font-family: 'Gill Sans', sans-serif;
-    font-size: 58px;
-    margin-bottom: -60px;
+    background: url('../images/header.png') no-repeat top center;
+    line-height: 320px;
+    font-size: 55px;
+    margin-bottom: -100px;
+    color: white;
 }
 .container {
     background-color: white;
@@ -26,28 +25,38 @@ hr.dots {
 #footer {
     padding-bottom: 50px;
 }
-a:hover {
+a.muted {
     text-decoration: none;
-    color: #F05B84;
-}
-a {
-    color: #F05B84;
+    color: rgb(222, 203, 228);
 }
 .item {
     padding: 8px 0px;
 }
-.pink {
-    color: #F05B84;
+.col-md-8 img {
+    padding: 10px 0px;
 }
-.gold {
-    color: #D1AB1F;
+.Pastel1 .q0-5 {
+    fill: rgb(251, 180, 174);
+    color: rgb(251, 180, 174);
+    background-color: rgb(251, 180, 174);
 }
-.deepred {
-    color: #52000C;
+.Pastel1 .q1-5 {
+    fill: rgb(179, 205, 227);
+    color: rgb(179, 205, 227);
+    background-color: rgb(179, 205, 227);
 }
-.blue {
-    color: #0C587A;
+.Pastel1 .q2-5 {
+    fill: rgb(204, 235, 197);
+    color: rgb(204, 235, 197);
+    background-color: rgb(204, 235, 197);
 }
-.lightblue{
-    color: #45B4BD;
+.Pastel1 .q3-5 {
+    fill: rgb(222, 203, 228);
+    color: rgb(222, 203, 228);
+    background-color: rgb(222, 203, 228);
+}
+.Pastel1 .q4-5 {
+    fill: rgb(254, 217, 166);
+    color: rgb(254, 217, 166);
+    background-color: rgb(254, 217, 166);
 }
