@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 {% include head.html %}
+{% if page.jf_head %}
+    {% include {{ page.jf_head }} %}
+{% endif %}
 
 <body id="header" class="text-center">
     <div class="jumbotrom">
