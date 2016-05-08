@@ -17,5 +17,6 @@
     var imgs = wall.container.find('.imgt');
     imgs.find('img').load(function () {
         wall.fitWidth();
-    })
+    });
+    $(window).trigger('resize');
 </script>
