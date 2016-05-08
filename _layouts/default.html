@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 {% include head.html %}
-{% if page.jf_head %}
-    {% include {{ page.jf_head }} %}
-{% endif %}
 
 <body id="header" class="text-center">
     <div class="jumbotrom">
@@ -15,7 +12,7 @@
         <div class="row">
             <div class="col-md-2">
                 <div class="item">
-                    <a class="muted" href="rsvp"><img alt="Make a Gift" src="images/save-the-date.png">RSVP</a>
+                    <!--a class="muted" href="rsvp"--><img alt="Save the Date" src="images/save-the-date.png"><!--RSVP/a-->
                 </div>
                 <div class="item">
                     <a class="muted" href="registry"><img alt="Make a Gift" src="images/gift-reg.png">Gift Ideas</a>
@@ -35,8 +32,7 @@
     <div id="footer" class="container">
         {% include footer.html %}
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    {% include foot.html %}
 </body>
 
 </html>

@@ -1,7 +1,5 @@
 {
   "s3": {
-    "finished": "http://stinegillwedding-us.s3-us-west-2.amazonaws.com/wedding/finished/edited",
-    "wedding": "http://stinegillwedding-us.s3-us-west-2.amazonaws.com/wedding",
-    "engagement": "http://stinegillwedding-us.s3-us-west-2.amazonaws.com"
+    "travel": "https://s3-us-west-1.amazonaws.com/stinegillwedding-us/wedding/travel"
   }
 }

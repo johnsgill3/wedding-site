@@ -22,4 +22,7 @@
         ga('create', 'UA-76620039-1', 'stinegillwedding.us');
         ga('send', 'pageview');
     </script>
+    {% if page.jf_head %}
+        {% include {{ page.jf_head }} %}
+    {% endif %}
 </head>

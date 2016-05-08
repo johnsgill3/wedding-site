@@ -1,0 +1,21 @@
+<script src="//blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
+<script src="js/bootstrap-image-gallery.min.js"></script>
+<script src="js/freewall.js"></script>
+<script>
+    var wall = new Freewall('#links');
+
+    wall.reset({
+        selector: '.imgt',
+        animate: true,
+        cellH: 'auto',
+        cellW: 150,
+        gutterX: 6,
+        gutterY: 6,
+        onResize: function () { wall.fitWidth(); }
+    });
+
+    var imgs = wall.container.find('.imgt');
+    imgs.find('img').load(function () {
+        wall.fitWidth();
+    })
+</script>
