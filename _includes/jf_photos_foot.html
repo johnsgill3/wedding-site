@@ -15,8 +15,12 @@
     });
 
     var imgs = wall.container.find('.imgt');
-    imgs.find('img').load(function () {
-        wall.fitWidth();
+    var nimgs = imgs.length;
+    imgs.find('img').one('load', function () {
+        nimgs -= 1;
+        if(nimgs == 0) wall.fitWidth();
+    })
+    .each(function () {
+        if(this.complete) $(this).load();
     });
-    $(window).trigger('resize');
 </script>
