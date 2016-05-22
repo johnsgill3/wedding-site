@@ -1,8 +1,8 @@
 body {
     font-family: 'Lora', serif;
     font-weight: bold;
-    background-color: rgb(204, 235, 197);
-    color: rgb(255, 191, 102);
+    background-color: rgb(141,211,199);
+    color: rgb(251,128,114);
 }
 h1#title {
     background: url('../images/header.png') no-repeat top center;
@@ -27,36 +27,11 @@ hr.dots {
 }
 a.muted {
     text-decoration: none;
-    color: rgb(222, 203, 228);
+    color: rgb(190,186,218);
 }
 .item {
     padding: 8px 0px;
 }
 .col-md-8 img {
     padding: 10px 0px;
-}
-.Pastel1 .q0-5 {
-    fill: rgb(251, 180, 174);
-    color: rgb(251, 180, 174);
-    background-color: rgb(251, 180, 174);
-}
-.Pastel1 .q1-5 {
-    fill: rgb(179, 205, 227);
-    color: rgb(179, 205, 227);
-    background-color: rgb(179, 205, 227);
-}
-.Pastel1 .q2-5 {
-    fill: rgb(204, 235, 197);
-    color: rgb(204, 235, 197);
-    background-color: rgb(204, 235, 197);
-}
-.Pastel1 .q3-5 {
-    fill: rgb(222, 203, 228);
-    color: rgb(222, 203, 228);
-    background-color: rgb(222, 203, 228);
-}
-.Pastel1 .q4-5 {
-    fill: rgb(254, 217, 166);
-    color: rgb(254, 217, 166);
-    background-color: rgb(254, 217, 166);
 }
