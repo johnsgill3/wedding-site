@@ -32,6 +32,14 @@ a.muted {
 .item {
     padding: 8px 0px;
 }
-.col-md-8 img {
+.col-md-8 img.lovers {
     padding: 10px 0px;
+}
+
+.col-md-2 {
+    padding-right: 5px;
+}
+
+#rsvp_form {
+    text-align: left;
 }
