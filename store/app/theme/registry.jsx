@@ -59,7 +59,9 @@ module.exports = React.createClass({
                             <thead>
                             </thead>
                             <tbody>
-                                {this.props.products.map(function (product, id) {
+                                {this.props.products
+                                    .sort(function(a, b) { return a.get('name').localeCompare(b.get('name')) })
+                                    .map(function (product, id) {
                                     var image = (product.has('images'))
                                         ? product.get('images').first()
                                         : undefined
