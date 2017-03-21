@@ -1,0 +1,112 @@
+@COLOR_BACKGROUND_SECONDARY: #fff;
+
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./material-icons-400.woff') format('woff');
+}
+
+.fillRelative() {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+table {
+    .fillRelative();
+}
+
+td {
+    padding: 5px;
+    color: black;
+    img {
+        width: 150px;
+    }
+    &.total {
+        text-align: right;
+    }
+    &.itemName {
+        text-align: left;
+        font-weight: bold;
+    }
+    &.itemDesc {
+        text-align: left;
+        font-weight: normal;
+        vertical-align: top;
+    }
+}
+
+aside {
+    .fillRelative();
+    align-items: center;
+    background: rgba(0, 0, 0, 0.60);
+    color: @COLOR_BACKGROUND_SECONDARY;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    text-align: center;
+    .container {
+        margin: 0 auto;
+        max-width: 1500px;
+        overflow: hidden;
+        padding: 3.0%;
+        color: black;
+    }
+}
+.aside-appear,
+.aside-enter {
+    opacity: 0.00;
+    i {
+        opacity: 0.00;
+        transform: translate3d(0, -4px, 0);
+        transition: 0.35s ease-out;
+        transition-property: transform, opacity;
+    }
+    p {
+        opacity: 0.00;
+        transform: translate3d(0, -4px, 0);
+        transition: 0.35s ease-out;
+        transition-delay: 0.20s;
+        transition-property: transform, opacity;
+    }
+}
+
+.aside-appear.aside-appear-active,
+.aside-enter.aside-enter-active {
+    opacity: 1.00;
+    transition: opacity 0.20s ease-in-out;
+    i,
+    p {
+        opacity: 1.00;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+/* https://google.github.io/material-design-icons/ */
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: 'liga';
+    color: rgba(0, 0, 0, 0.54);
+}
+
+.icon-48 {
+    font-size: 48px;
+}

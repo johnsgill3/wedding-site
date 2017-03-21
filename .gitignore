@@ -1,3 +1,10 @@
 _site
 .sass-cache
 .jekyll-metadata
+**/node_modules/**
+**/build/**
+.env
+**/.DS_Store
+images/Wedding-Site/*
+**/ssl/*
+**/*.map
