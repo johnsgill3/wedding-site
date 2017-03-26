@@ -90,7 +90,7 @@ function register(webServer, options, next) {
         path: '/get-product-list',
         handler: function(req, reply) {
             return new BPromise(function(resolve, reject) {
-                    stripe.products.list({limit: 100}, function(err, products) {
+                    stripe.products.list({active: true, limit: 100}, function(err, products) {
                         if (err) return reject(Boom.badGateway(err.message))
                         retProducts = _.reduce(products['data'], function(result, product) {
                             result[product['skus']['data'][0]['id']] = {
